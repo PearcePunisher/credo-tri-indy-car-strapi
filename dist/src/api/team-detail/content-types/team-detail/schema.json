@@ -4,7 +4,8 @@
     "info": {
         "singularName": "team-detail",
         "pluralName": "team-details",
-        "displayName": "Team Details"
+        "displayName": "Team Details",
+        "description": ""
     },
     "options": {
         "draftAndPublish": true
@@ -19,12 +20,12 @@
             "required": true
         },
         "Logo": {
-            "allowedTypes": [
-                "images"
-            ],
             "type": "media",
             "multiple": false,
-            "required": true
+            "required": true,
+            "allowedTypes": [
+                "images"
+            ]
         }
     }
 }

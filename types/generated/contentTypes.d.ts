@@ -568,6 +568,7 @@ export interface ApiRestaurantRestaurant extends Struct.CollectionTypeSchema {
 export interface ApiTeamDetailTeamDetail extends Struct.CollectionTypeSchema {
   collectionName: 'team_details';
   info: {
+    description: '';
     displayName: 'Team Details';
     pluralName: 'team-details';
     singularName: 'team-detail';
