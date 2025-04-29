@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "team_details",
+  "info": {
+    "singularName": "team-detail",
+    "pluralName": "team-details",
+    "displayName": "Team Details"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "required": true
+    },
+    "Description": {
+      "type": "blocks",
+      "required": true
+    },
+    "Logo": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}
