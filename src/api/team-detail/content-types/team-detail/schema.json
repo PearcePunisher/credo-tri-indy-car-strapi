@@ -4,27 +4,37 @@
   "info": {
     "singularName": "team-detail",
     "pluralName": "team-details",
-    "displayName": "Team Details",
+    "displayName": "Team",
     "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "attributes": {
-    "Title": {
-      "type": "string",
-      "required": true
+    "team_id": {
+      "type": "uid"
     },
-    "Description": {
-      "type": "blocks",
-      "required": true
+    "team_name": {
+      "type": "string"
     },
-    "Logo": {
+    "team_descriptions": {
+      "type": "richtext"
+    },
+    "team_sponsors": {
+      "displayName": "team_sponsor",
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.team-sponsor"
+    },
+    "team_logo": {
       "type": "media",
       "multiple": false,
-      "required": true,
+      "required": false,
       "allowedTypes": [
-        "images"
+        "images",
+        "files",
+        "videos",
+        "audios"
       ]
     }
   }

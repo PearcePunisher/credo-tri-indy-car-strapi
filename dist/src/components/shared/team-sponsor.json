@@ -1,0 +1,15 @@
+{
+    "collectionName": "components_shared_team_sponsors",
+    "info": {
+        "displayName": "team_sponsor",
+        "description": ""
+    },
+    "options": {},
+    "attributes": {
+        "sponsors": {
+            "type": "relation",
+            "relation": "oneToMany",
+            "target": "api::sponsor.sponsor"
+        }
+    }
+}

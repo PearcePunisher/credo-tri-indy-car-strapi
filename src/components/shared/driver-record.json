@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_shared_driver_records",
+  "info": {
+    "displayName": "driver_record",
+    "icon": "book"
+  },
+  "options": {},
+  "attributes": {
+    "record_date": {
+      "type": "date"
+    },
+    "record_details": {
+      "type": "string"
+    }
+  }
+}

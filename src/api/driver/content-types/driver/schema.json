@@ -289,14 +289,26 @@
       "target": "api::car.car"
     },
     "driver_image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "team": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::team-detail.team-detail"
+    },
+    "driver_record": {
+      "displayName": "driver_record",
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.driver-record"
     }
   }
 }

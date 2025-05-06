@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sponsors",
+  "info": {
+    "singularName": "sponsor",
+    "pluralName": "sponsors",
+    "displayName": "Sponsor"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "sponsor_id": {
+      "type": "uid"
+    },
+    "sponsor_name": {
+      "type": "string"
+    },
+    "sponsor_slogan": {
+      "type": "string"
+    },
+    "sponsor_description": {
+      "type": "text"
+    },
+    "sponsor_logo": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "sponsor_link": {
+      "type": "string"
+    }
+  }
+}

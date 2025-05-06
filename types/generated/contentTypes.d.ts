@@ -815,6 +815,7 @@ export interface ApiDriverDriver extends Struct.CollectionTypeSchema {
       'images' | 'files' | 'videos' | 'audios'
     >;
     driver_lname: Schema.Attribute.String;
+    driver_record: Schema.Attribute.Component<'shared.driver-record', true>;
     driver_social_medias: Schema.Attribute.Component<
       'shared.driver-socials',
       true
@@ -824,6 +825,51 @@ export interface ApiDriverDriver extends Struct.CollectionTypeSchema {
       'oneToMany',
       'api::driver.driver'
     > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    team: Schema.Attribute.Relation<'oneToOne', 'api::team-detail.team-detail'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiEventEvent extends Struct.CollectionTypeSchema {
+  collectionName: 'events';
+  info: {
+    description: '';
+    displayName: 'Event';
+    pluralName: 'events';
+    singularName: 'event';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    event_description: Schema.Attribute.RichText;
+    event_detail_callout: Schema.Attribute.Component<
+      'shared.event-detail-callouts',
+      true
+    >;
+    event_downloadables: Schema.Attribute.Component<
+      'shared.event-downloadables',
+      true
+    >;
+    event_fact_file: Schema.Attribute.Component<
+      'shared.event-fact-file',
+      false
+    >;
+    event_id: Schema.Attribute.UID;
+    event_images: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    event_name: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::event.event'> &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
@@ -895,11 +941,46 @@ export interface ApiRestaurantRestaurant extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiSponsorSponsor extends Struct.CollectionTypeSchema {
+  collectionName: 'sponsors';
+  info: {
+    displayName: 'Sponsor';
+    pluralName: 'sponsors';
+    singularName: 'sponsor';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::sponsor.sponsor'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    sponsor_description: Schema.Attribute.Text;
+    sponsor_id: Schema.Attribute.UID;
+    sponsor_link: Schema.Attribute.String;
+    sponsor_logo: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    sponsor_name: Schema.Attribute.String;
+    sponsor_slogan: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiTeamDetailTeamDetail extends Struct.CollectionTypeSchema {
   collectionName: 'team_details';
   info: {
     description: '';
-    displayName: 'Team Details';
+    displayName: 'Team';
     pluralName: 'team-details';
     singularName: 'team-detail';
   };
@@ -910,16 +991,18 @@ export interface ApiTeamDetailTeamDetail extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    Description: Schema.Attribute.Blocks & Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::team-detail.team-detail'
     > &
       Schema.Attribute.Private;
-    Logo: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
-    Title: Schema.Attribute.String & Schema.Attribute.Required;
+    team_descriptions: Schema.Attribute.RichText;
+    team_id: Schema.Attribute.UID;
+    team_logo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    team_name: Schema.Attribute.String;
+    team_sponsors: Schema.Attribute.Component<'shared.team-sponsor', true>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1441,8 +1524,10 @@ declare module '@strapi/strapi' {
       'api::car.car': ApiCarCar;
       'api::category.category': ApiCategoryCategory;
       'api::driver.driver': ApiDriverDriver;
+      'api::event.event': ApiEventEvent;
       'api::global.global': ApiGlobalGlobal;
       'api::restaurant.restaurant': ApiRestaurantRestaurant;
+      'api::sponsor.sponsor': ApiSponsorSponsor;
       'api::team-detail.team-detail': ApiTeamDetailTeamDetail;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

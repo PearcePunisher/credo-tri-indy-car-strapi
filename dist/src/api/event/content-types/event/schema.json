@@ -1,0 +1,53 @@
+{
+    "kind": "collectionType",
+    "collectionName": "events",
+    "info": {
+        "singularName": "event",
+        "pluralName": "events",
+        "displayName": "Event",
+        "description": ""
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "attributes": {
+        "event_id": {
+            "type": "uid"
+        },
+        "event_name": {
+            "type": "string"
+        },
+        "event_images": {
+            "type": "media",
+            "multiple": true,
+            "required": false,
+            "allowedTypes": [
+                "images",
+                "files",
+                "videos",
+                "audios"
+            ]
+        },
+        "event_description": {
+            "type": "richtext"
+        },
+        "event_detail_callout": {
+            "displayName": "event_detail_callouts",
+            "type": "component",
+            "repeatable": true,
+            "component": "shared.event-detail-callouts"
+        },
+        "event_fact_file": {
+            "displayName": "event_fact_file",
+            "type": "component",
+            "repeatable": false,
+            "component": "shared.event-fact-file"
+        },
+        "event_downloadables": {
+            "displayName": "event_downloadables",
+            "type": "component",
+            "repeatable": true,
+            "component": "shared.event-downloadables"
+        }
+    }
+}

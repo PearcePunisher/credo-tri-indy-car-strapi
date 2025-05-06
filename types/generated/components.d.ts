@@ -61,6 +61,18 @@ export interface SharedCarOtherSpecs extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedDriverRecord extends Struct.ComponentSchema {
+  collectionName: 'components_shared_driver_records';
+  info: {
+    displayName: 'driver_record';
+    icon: 'book';
+  };
+  attributes: {
+    record_date: Schema.Attribute.Date;
+    record_details: Schema.Attribute.String;
+  };
+}
+
 export interface SharedDriverSocials extends Struct.ComponentSchema {
   collectionName: 'components_shared_driver_socials';
   info: {
@@ -98,6 +110,45 @@ export interface SharedDriverSocials extends Struct.ComponentSchema {
         'Clubhouse',
       ]
     >;
+  };
+}
+
+export interface SharedEventDetailCallouts extends Struct.ComponentSchema {
+  collectionName: 'components_shared_event_detail_callouts';
+  info: {
+    displayName: 'event_detail_callouts';
+    icon: 'bulletList';
+  };
+  attributes: {
+    event_detail_callout_title: Schema.Attribute.String;
+    event_detail_callouts_details: Schema.Attribute.String;
+  };
+}
+
+export interface SharedEventDownloadables extends Struct.ComponentSchema {
+  collectionName: 'components_shared_event_downloadables';
+  info: {
+    displayName: 'event_downloadables';
+    icon: 'archive';
+  };
+  attributes: {
+    event_downloadables_description: Schema.Attribute.Text;
+    event_downloadables_file: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    event_downloadables_title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedEventFactFile extends Struct.ComponentSchema {
+  collectionName: 'components_shared_event_fact_files';
+  info: {
+    displayName: 'event_fact_file';
+    icon: 'apps';
+  };
+  attributes: {
+    event_fact_file_details: Schema.Attribute.Blocks;
+    event_fact_file_title: Schema.Attribute.String;
   };
 }
 
@@ -163,6 +214,17 @@ export interface SharedSlider extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedTeamSponsor extends Struct.ComponentSchema {
+  collectionName: 'components_shared_team_sponsors';
+  info: {
+    description: '';
+    displayName: 'team_sponsor';
+  };
+  attributes: {
+    sponsors: Schema.Attribute.Relation<'oneToMany', 'api::sponsor.sponsor'>;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -171,12 +233,17 @@ declare module '@strapi/strapi' {
       'shared.car-images': SharedCarImages;
       'shared.car-materials': SharedCarMaterials;
       'shared.car-other-specs': SharedCarOtherSpecs;
+      'shared.driver-record': SharedDriverRecord;
       'shared.driver-socials': SharedDriverSocials;
+      'shared.event-detail-callouts': SharedEventDetailCallouts;
+      'shared.event-downloadables': SharedEventDownloadables;
+      'shared.event-fact-file': SharedEventFactFile;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;
       'shared.slider': SharedSlider;
+      'shared.team-sponsor': SharedTeamSponsor;
     }
   }
 }

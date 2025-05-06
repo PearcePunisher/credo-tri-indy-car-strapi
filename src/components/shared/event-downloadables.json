@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_shared_event_downloadables",
+  "info": {
+    "displayName": "event_downloadables",
+    "icon": "archive"
+  },
+  "options": {},
+  "attributes": {
+    "event_downloadables_title": {
+      "type": "string"
+    },
+    "event_downloadables_description": {
+      "type": "text"
+    },
+    "event_downloadables_file": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

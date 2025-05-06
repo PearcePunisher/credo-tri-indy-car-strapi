@@ -1,0 +1,16 @@
+{
+    "collectionName": "components_shared_event_detail_callouts",
+    "info": {
+        "displayName": "event_detail_callouts",
+        "icon": "bulletList"
+    },
+    "options": {},
+    "attributes": {
+        "event_detail_callout_title": {
+            "type": "string"
+        },
+        "event_detail_callouts_details": {
+            "type": "string"
+        }
+    }
+}

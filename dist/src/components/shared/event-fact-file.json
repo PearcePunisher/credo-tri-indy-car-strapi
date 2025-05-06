@@ -1,0 +1,16 @@
+{
+    "collectionName": "components_shared_event_fact_files",
+    "info": {
+        "displayName": "event_fact_file",
+        "icon": "apps"
+    },
+    "options": {},
+    "attributes": {
+        "event_fact_file_title": {
+            "type": "string"
+        },
+        "event_fact_file_details": {
+            "type": "blocks"
+        }
+    }
+}
