@@ -25,13 +25,16 @@ export interface SharedCarConstruction extends Struct.ComponentSchema {
 export interface SharedCarImages extends Struct.ComponentSchema {
   collectionName: 'components_shared_car_images';
   info: {
+    description: '';
     displayName: 'car_images';
     icon: 'car';
   };
   attributes: {
-    car_image: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
+    car_image_hero: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    car_image_side: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
     >;
   };
 }

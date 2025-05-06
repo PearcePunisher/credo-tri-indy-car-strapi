@@ -2,11 +2,23 @@
   "collectionName": "components_shared_car_images",
   "info": {
     "displayName": "car_images",
-    "icon": "car"
+    "icon": "car",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "car_image": {
+    "car_image_side": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "car_image_hero": {
       "allowedTypes": [
         "images",
         "files",
@@ -14,7 +26,7 @@
         "audios"
       ],
       "type": "media",
-      "multiple": true
+      "multiple": false
     }
   }
 }

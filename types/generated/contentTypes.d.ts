@@ -473,6 +473,7 @@ export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
 export interface ApiCarCar extends Struct.CollectionTypeSchema {
   collectionName: 'cars';
   info: {
+    description: '';
     displayName: 'Car';
     pluralName: 'cars';
     singularName: 'car';
@@ -490,6 +491,8 @@ export interface ApiCarCar extends Struct.CollectionTypeSchema {
     car_id: Schema.Attribute.UID;
     car_images: Schema.Attribute.Component<'shared.car-images', true>;
     car_material: Schema.Attribute.Component<'shared.car-materials', true>;
+    car_name_human_readable: Schema.Attribute.String &
+      Schema.Attribute.Required;
     car_other_spec: Schema.Attribute.Component<'shared.car-other-specs', true>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
