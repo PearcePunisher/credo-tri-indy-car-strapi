@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_shared_car_materials",
+  "info": {
+    "displayName": "car_materials",
+    "icon": "gate"
+  },
+  "options": {},
+  "attributes": {
+    "car_material_detail": {
+      "type": "string"
+    }
+  }
+}

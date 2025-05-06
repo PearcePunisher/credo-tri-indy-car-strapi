@@ -1,0 +1,13 @@
+{
+    "collectionName": "components_shared_car_constructions",
+    "info": {
+        "displayName": "car_construction",
+        "icon": "bulletList"
+    },
+    "options": {},
+    "attributes": {
+        "car_construction_detail": {
+            "type": "string"
+        }
+    }
+}

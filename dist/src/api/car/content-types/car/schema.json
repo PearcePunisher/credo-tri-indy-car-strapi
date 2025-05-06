@@ -1,0 +1,50 @@
+{
+    "kind": "collectionType",
+    "collectionName": "cars",
+    "info": {
+        "singularName": "car",
+        "pluralName": "cars",
+        "displayName": "Car"
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "attributes": {
+        "car_id": {
+            "type": "uid"
+        },
+        "car_images": {
+            "displayName": "car_images",
+            "type": "component",
+            "repeatable": true,
+            "component": "shared.car-images"
+        },
+        "car_description": {
+            "type": "richtext"
+        },
+        "car_chassis": {
+            "displayName": "car_chassis",
+            "type": "component",
+            "repeatable": true,
+            "component": "shared.car-chassis"
+        },
+        "car_construction": {
+            "displayName": "car_construction",
+            "type": "component",
+            "repeatable": true,
+            "component": "shared.car-construction"
+        },
+        "car_other_spec": {
+            "displayName": "car_other_specs",
+            "type": "component",
+            "repeatable": true,
+            "component": "shared.car-other-specs"
+        },
+        "car_material": {
+            "displayName": "car_materials",
+            "type": "component",
+            "repeatable": true,
+            "component": "shared.car-materials"
+        }
+    }
+}

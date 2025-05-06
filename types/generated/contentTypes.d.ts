@@ -470,6 +470,40 @@ export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiCarCar extends Struct.CollectionTypeSchema {
+  collectionName: 'cars';
+  info: {
+    displayName: 'Car';
+    pluralName: 'cars';
+    singularName: 'car';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    car_chassis: Schema.Attribute.Component<'shared.car-chassis', true>;
+    car_construction: Schema.Attribute.Component<
+      'shared.car-construction',
+      true
+    >;
+    car_description: Schema.Attribute.RichText;
+    car_id: Schema.Attribute.UID;
+    car_images: Schema.Attribute.Component<'shared.car-images', true>;
+    car_material: Schema.Attribute.Component<'shared.car-materials', true>;
+    car_other_spec: Schema.Attribute.Component<'shared.car-other-specs', true>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::car.car'> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   collectionName: 'categories';
   info: {
@@ -514,6 +548,7 @@ export interface ApiDriverDriver extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    car: Schema.Attribute.Relation<'oneToOne', 'api::car.car'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -773,7 +808,14 @@ export interface ApiDriverDriver extends Struct.CollectionTypeSchema {
     >;
     driver_fname: Schema.Attribute.String;
     Driver_ID: Schema.Attribute.UID;
+    driver_image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     driver_lname: Schema.Attribute.String;
+    driver_social_medias: Schema.Attribute.Component<
+      'shared.driver-socials',
+      true
+    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -1393,6 +1435,7 @@ declare module '@strapi/strapi' {
       'api::about.about': ApiAboutAbout;
       'api::article.article': ApiArticleArticle;
       'api::author.author': ApiAuthorAuthor;
+      'api::car.car': ApiCarCar;
       'api::category.category': ApiCategoryCategory;
       'api::driver.driver': ApiDriverDriver;
       'api::global.global': ApiGlobalGlobal;

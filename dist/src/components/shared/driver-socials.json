@@ -1,0 +1,43 @@
+{
+    "collectionName": "components_shared_driver_socials",
+    "info": {
+        "displayName": "driver_socials",
+        "icon": "cast"
+    },
+    "options": {},
+    "attributes": {
+        "social_platform": {
+            "type": "enumeration",
+            "enum": [
+                "Facebook",
+                "YouTube",
+                "WhatsApp",
+                "Instagram",
+                "WeChat",
+                "TikTok",
+                "Telegram",
+                "Snapchat",
+                "X (formerly Twitter)",
+                "Pinterest",
+                "Reddit",
+                "LinkedIn",
+                "Discord",
+                "Threads",
+                "Kuaishou",
+                "QQ",
+                "Quora",
+                "Tumblr",
+                "Line",
+                "BeReal",
+                "Twitch",
+                "Viber",
+                "VK (VKontakte)",
+                "Mastodon",
+                "Clubhouse"
+            ]
+        },
+        "driver_social_length": {
+            "type": "string"
+        }
+    }
+}

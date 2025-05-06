@@ -1,0 +1,20 @@
+{
+    "collectionName": "components_shared_car_images",
+    "info": {
+        "displayName": "car_images",
+        "icon": "car"
+    },
+    "options": {},
+    "attributes": {
+        "car_image": {
+            "allowedTypes": [
+                "images",
+                "files",
+                "videos",
+                "audios"
+            ],
+            "type": "media",
+            "multiple": true
+        }
+    }
+}

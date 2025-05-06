@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_shared_car_chasses",
+  "info": {
+    "displayName": "car_chassis",
+    "icon": "dashboard"
+  },
+  "options": {},
+  "attributes": {
+    "car_chasis_detail": {
+      "type": "string"
+    }
+  }
+}

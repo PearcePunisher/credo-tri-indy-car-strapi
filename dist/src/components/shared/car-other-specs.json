@@ -1,0 +1,13 @@
+{
+    "collectionName": "components_shared_car_other_specs",
+    "info": {
+        "displayName": "car_other_specs",
+        "icon": "bulletList"
+    },
+    "options": {},
+    "attributes": {
+        "car_other_spec_detail": {
+            "type": "string"
+        }
+    }
+}

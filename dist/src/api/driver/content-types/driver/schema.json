@@ -276,6 +276,27 @@
         },
         "driver_bio": {
             "type": "richtext"
+        },
+        "driver_social_medias": {
+            "displayName": "driver_socials",
+            "type": "component",
+            "repeatable": true,
+            "component": "shared.driver-socials"
+        },
+        "car": {
+            "type": "relation",
+            "relation": "oneToOne",
+            "target": "api::car.car"
+        },
+        "driver_image": {
+            "allowedTypes": [
+                "images",
+                "files",
+                "videos",
+                "audios"
+            ],
+            "type": "media",
+            "multiple": false
         }
     }
 }
