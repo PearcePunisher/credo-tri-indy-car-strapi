@@ -23,7 +23,7 @@
     "team_sponsors": {
       "displayName": "team_sponsor",
       "type": "component",
-      "repeatable": true,
+      "repeatable": false,
       "component": "shared.team-sponsor"
     },
     "team_logo": {
