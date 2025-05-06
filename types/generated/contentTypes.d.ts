@@ -878,6 +878,42 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiExperienceExperience extends Struct.CollectionTypeSchema {
+  collectionName: 'experiences';
+  info: {
+    description: '';
+    displayName: 'Experience';
+    pluralName: 'experiences';
+    singularName: 'experience';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    event: Schema.Attribute.Relation<'oneToOne', 'api::event.event'>;
+    experience_description: Schema.Attribute.Blocks;
+    experience_id: Schema.Attribute.UID;
+    experience_image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    experience_start_time: Schema.Attribute.DateTime;
+    experience_title: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::experience.experience'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   collectionName: 'globals';
   info: {
@@ -1002,7 +1038,7 @@ export interface ApiTeamDetailTeamDetail extends Struct.CollectionTypeSchema {
     team_id: Schema.Attribute.UID;
     team_logo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     team_name: Schema.Attribute.String;
-    team_sponsors: Schema.Attribute.Component<'shared.team-sponsor', true>;
+    team_sponsors: Schema.Attribute.Component<'shared.team-sponsor', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1525,6 +1561,7 @@ declare module '@strapi/strapi' {
       'api::category.category': ApiCategoryCategory;
       'api::driver.driver': ApiDriverDriver;
       'api::event.event': ApiEventEvent;
+      'api::experience.experience': ApiExperienceExperience;
       'api::global.global': ApiGlobalGlobal;
       'api::restaurant.restaurant': ApiRestaurantRestaurant;
       'api::sponsor.sponsor': ApiSponsorSponsor;
