@@ -1037,6 +1037,7 @@ export interface ApiTeamDetailTeamDetail extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    team_colors: Schema.Attribute.Component<'shared.team-colors', false>;
     team_descriptions: Schema.Attribute.RichText;
     team_id: Schema.Attribute.UID;
     team_logos: Schema.Attribute.Component<'shared.team-logos', false>;

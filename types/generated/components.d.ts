@@ -226,6 +226,24 @@ export interface SharedSlider extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedTeamColors extends Struct.ComponentSchema {
+  collectionName: 'components_shared_team_colors';
+  info: {
+    displayName: 'team_colors';
+    icon: 'magic';
+  };
+  attributes: {
+    team_primary_color: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    team_quaternary_color: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    team_secondary_color: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    team_tertiary_color: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+  };
+}
+
 export interface SharedTeamLogos extends Struct.ComponentSchema {
   collectionName: 'components_shared_team_logos';
   info: {
@@ -286,6 +304,7 @@ declare module '@strapi/strapi' {
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;
       'shared.slider': SharedSlider;
+      'shared.team-colors': SharedTeamColors;
       'shared.team-logos': SharedTeamLogos;
       'shared.team-sponsor': SharedTeamSponsor;
       'shared.venue-direction-section': SharedVenueDirectionSection;
