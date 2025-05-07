@@ -2107,6 +2107,16 @@
     "@strapi/icons" "2.0.0-rc.23"
     react-intl "6.6.2"
 
+"@strapi/plugin-color-picker@^5.13.0":
+  version "5.13.0"
+  resolved "https://registry.yarnpkg.com/@strapi/plugin-color-picker/-/plugin-color-picker-5.13.0.tgz#b22c7fad3bfbfb65add52a4f6d69f4ac87eac7b4"
+  integrity sha512-KnglviRcWHdJ4XsoPBjKJ5ndODc87stTEOSIsybkOWJqmlXRse794Pyfg0ZWpazNPLjIsoGGXShvIuXvj4iM2Q==
+  dependencies:
+    "@strapi/design-system" "2.0.0-rc.23"
+    "@strapi/icons" "2.0.0-rc.23"
+    react-colorful "5.6.1"
+    react-intl "6.6.2"
+
 "@strapi/plugin-users-permissions@5.12.6":
   version "5.12.6"
   resolved "https://registry.yarnpkg.com/@strapi/plugin-users-permissions/-/plugin-users-permissions-5.12.6.tgz#39053895a1ef572539fca57c04cfda18a00f3f4a"
@@ -8011,6 +8021,11 @@ rc@1.2.8, rc@^1.2.7, rc@^1.2.8:
     ini "~1.3.0"
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
+
+react-colorful@5.6.1:
+  version "5.6.1"
+  resolved "https://registry.yarnpkg.com/react-colorful/-/react-colorful-5.6.1.tgz#7dc2aed2d7c72fac89694e834d179e32f3da563b"
+  integrity sha512-1exovf0uGTGyq5mXQT0zgQ80uvj2PCwvF8zY1RN9/vbJVSjSo3fsB/4L3ObbF7u70NduSiK4xu4Y6q1MHoUGEw==
 
 react-dnd-html5-backend@16.0.1:
   version "16.0.1"
