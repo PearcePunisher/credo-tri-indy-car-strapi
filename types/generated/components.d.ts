@@ -226,6 +226,24 @@ export interface SharedSlider extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedTeamLogos extends Struct.ComponentSchema {
+  collectionName: 'components_shared_team_logos';
+  info: {
+    displayName: 'team_logos';
+    icon: 'monitor';
+  };
+  attributes: {
+    team_banner_logos: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    team_square_logos: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+  };
+}
+
 export interface SharedTeamSponsor extends Struct.ComponentSchema {
   collectionName: 'components_shared_team_sponsors';
   info: {
@@ -268,6 +286,7 @@ declare module '@strapi/strapi' {
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;
       'shared.slider': SharedSlider;
+      'shared.team-logos': SharedTeamLogos;
       'shared.team-sponsor': SharedTeamSponsor;
       'shared.venue-direction-section': SharedVenueDirectionSection;
     }

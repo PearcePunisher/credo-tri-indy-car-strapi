@@ -26,16 +26,11 @@
             "repeatable": false,
             "component": "shared.team-sponsor"
         },
-        "team_logo": {
-            "type": "media",
-            "multiple": false,
-            "required": false,
-            "allowedTypes": [
-                "images",
-                "files",
-                "videos",
-                "audios"
-            ]
+        "team_logos": {
+            "displayName": "team_logos",
+            "type": "component",
+            "repeatable": false,
+            "component": "shared.team-logos"
         }
     }
 }

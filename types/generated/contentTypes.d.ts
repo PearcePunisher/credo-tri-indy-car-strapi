@@ -1039,7 +1039,7 @@ export interface ApiTeamDetailTeamDetail extends Struct.CollectionTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     team_descriptions: Schema.Attribute.RichText;
     team_id: Schema.Attribute.UID;
-    team_logo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    team_logos: Schema.Attribute.Component<'shared.team-logos', false>;
     team_name: Schema.Attribute.String;
     team_sponsors: Schema.Attribute.Component<'shared.team-sponsor', false>;
     updatedAt: Schema.Attribute.DateTime;
