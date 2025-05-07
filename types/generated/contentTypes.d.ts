@@ -858,6 +858,7 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
       'shared.event-downloadables',
       true
     >;
+    event_end_date_time: Schema.Attribute.DateTime;
     event_fact_file: Schema.Attribute.Component<
       'shared.event-fact-file',
       false
@@ -870,6 +871,9 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
     event_name: Schema.Attribute.String;
     event_schedule: Schema.Attribute.Component<'shared.event-schedule', true>;
     event_schedule_description: Schema.Attribute.Blocks;
+    event_start_date_time: Schema.Attribute.DateTime;
+    event_venue_address: Schema.Attribute.String;
+    event_venue_address_link: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::event.event'> &
       Schema.Attribute.Private;
@@ -895,14 +899,18 @@ export interface ApiExperienceExperience extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    event: Schema.Attribute.Relation<'oneToOne', 'api::event.event'>;
     experience_description: Schema.Attribute.Blocks;
+    experience_end_date_time: Schema.Attribute.DateTime;
     experience_id: Schema.Attribute.UID;
     experience_image: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
     >;
     experience_location: Schema.Attribute.String;
-    experience_start_time: Schema.Attribute.DateTime;
+    experience_sponsors: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::sponsor.sponsor'
+    >;
+    experience_start_date_time: Schema.Attribute.DateTime;
     experience_title: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -910,6 +918,7 @@ export interface ApiExperienceExperience extends Struct.CollectionTypeSchema {
       'api::experience.experience'
     > &
       Schema.Attribute.Private;
+    parent_event: Schema.Attribute.Relation<'oneToOne', 'api::event.event'>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1537,7 +1546,6 @@ export interface PluginUsersPermissionsUser
   };
   options: {
     draftAndPublish: false;
-    timestamps: true;
   };
   attributes: {
     blocked: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
@@ -1572,6 +1580,16 @@ export interface PluginUsersPermissionsUser
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    user_date_of_birth: Schema.Attribute.Date;
+    user_first_name: Schema.Attribute.String;
+    user_image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    user_last_name: Schema.Attribute.String;
+    user_sponsor_inviter: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::sponsor.sponsor'
+    >;
     username: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique &

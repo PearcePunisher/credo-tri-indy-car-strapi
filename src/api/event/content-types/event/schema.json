@@ -57,6 +57,18 @@
     },
     "event_schedule_description": {
       "type": "blocks"
+    },
+    "event_start_date_time": {
+      "type": "datetime"
+    },
+    "event_end_date_time": {
+      "type": "datetime"
+    },
+    "event_venue_address": {
+      "type": "string"
+    },
+    "event_venue_address_link": {
+      "type": "string"
     }
   }
 }

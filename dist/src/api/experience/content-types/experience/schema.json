@@ -31,16 +31,24 @@
         "experience_description": {
             "type": "blocks"
         },
-        "experience_start_time": {
+        "experience_start_date_time": {
             "type": "datetime"
         },
-        "event": {
+        "parent_event": {
             "type": "relation",
             "relation": "oneToOne",
             "target": "api::event.event"
         },
         "experience_location": {
             "type": "string"
+        },
+        "experience_end_date_time": {
+            "type": "datetime"
+        },
+        "experience_sponsors": {
+            "type": "relation",
+            "relation": "oneToMany",
+            "target": "api::sponsor.sponsor"
         }
     }
 }
