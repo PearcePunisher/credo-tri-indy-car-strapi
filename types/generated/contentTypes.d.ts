@@ -868,6 +868,8 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
       true
     >;
     event_name: Schema.Attribute.String;
+    event_schedule: Schema.Attribute.Component<'shared.event-schedule', true>;
+    event_schedule_description: Schema.Attribute.Blocks;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::event.event'> &
       Schema.Attribute.Private;
@@ -899,6 +901,7 @@ export interface ApiExperienceExperience extends Struct.CollectionTypeSchema {
     experience_image: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
     >;
+    experience_location: Schema.Attribute.String;
     experience_start_time: Schema.Attribute.DateTime;
     experience_title: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
@@ -1042,6 +1045,39 @@ export interface ApiTeamDetailTeamDetail extends Struct.CollectionTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+  };
+}
+
+export interface ApiVenueDirectionVenueDirection
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'venue_directions';
+  info: {
+    displayName: 'Venue_Direction';
+    pluralName: 'venue-directions';
+    singularName: 'venue-direction';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::venue-direction.venue-direction'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    venue_direction_description: Schema.Attribute.Blocks;
+    venue_direction_section: Schema.Attribute.Component<
+      'shared.venue-direction-section',
+      true
+    >;
   };
 }
 
@@ -1566,6 +1602,7 @@ declare module '@strapi/strapi' {
       'api::restaurant.restaurant': ApiRestaurantRestaurant;
       'api::sponsor.sponsor': ApiSponsorSponsor;
       'api::team-detail.team-detail': ApiTeamDetailTeamDetail;
+      'api::venue-direction.venue-direction': ApiVenueDirectionVenueDirection;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

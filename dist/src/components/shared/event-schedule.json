@@ -1,0 +1,16 @@
+{
+    "collectionName": "components_shared_event_schedules",
+    "info": {
+        "displayName": "event_schedule",
+        "icon": "bulletList"
+    },
+    "options": {},
+    "attributes": {
+        "event_schedule_date_date": {
+            "type": "date"
+        },
+        "event_schedule_date_details": {
+            "type": "blocks"
+        }
+    }
+}

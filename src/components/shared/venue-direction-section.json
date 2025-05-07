@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_shared_venue_direction_sections",
+  "info": {
+    "displayName": "venue_direction_section",
+    "icon": "attachment"
+  },
+  "options": {},
+  "attributes": {
+    "venue_direction_section_title": {
+      "type": "string"
+    },
+    "venue_direction_section_details": {
+      "type": "blocks"
+    }
+  }
+}

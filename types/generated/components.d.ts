@@ -152,6 +152,18 @@ export interface SharedEventFactFile extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedEventSchedule extends Struct.ComponentSchema {
+  collectionName: 'components_shared_event_schedules';
+  info: {
+    displayName: 'event_schedule';
+    icon: 'bulletList';
+  };
+  attributes: {
+    event_schedule_date_date: Schema.Attribute.Date;
+    event_schedule_date_details: Schema.Attribute.Blocks;
+  };
+}
+
 export interface SharedMedia extends Struct.ComponentSchema {
   collectionName: 'components_shared_media';
   info: {
@@ -225,6 +237,18 @@ export interface SharedTeamSponsor extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedVenueDirectionSection extends Struct.ComponentSchema {
+  collectionName: 'components_shared_venue_direction_sections';
+  info: {
+    displayName: 'venue_direction_section';
+    icon: 'attachment';
+  };
+  attributes: {
+    venue_direction_section_details: Schema.Attribute.Blocks;
+    venue_direction_section_title: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -238,12 +262,14 @@ declare module '@strapi/strapi' {
       'shared.event-detail-callouts': SharedEventDetailCallouts;
       'shared.event-downloadables': SharedEventDownloadables;
       'shared.event-fact-file': SharedEventFactFile;
+      'shared.event-schedule': SharedEventSchedule;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;
       'shared.slider': SharedSlider;
       'shared.team-sponsor': SharedTeamSponsor;
+      'shared.venue-direction-section': SharedVenueDirectionSection;
     }
   }
 }

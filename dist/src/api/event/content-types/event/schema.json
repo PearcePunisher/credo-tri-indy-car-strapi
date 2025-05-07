@@ -48,6 +48,15 @@
             "type": "component",
             "repeatable": true,
             "component": "shared.event-downloadables"
+        },
+        "event_schedule": {
+            "displayName": "event_schedule",
+            "type": "component",
+            "repeatable": true,
+            "component": "shared.event-schedule"
+        },
+        "event_schedule_description": {
+            "type": "blocks"
         }
     }
 }

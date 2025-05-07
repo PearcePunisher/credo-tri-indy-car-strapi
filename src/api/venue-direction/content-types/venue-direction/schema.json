@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "venue_directions",
+  "info": {
+    "singularName": "venue-direction",
+    "pluralName": "venue-directions",
+    "displayName": "Venue_Direction"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "venue_direction_description": {
+      "type": "blocks"
+    },
+    "venue_direction_section": {
+      "displayName": "venue_direction_section",
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.venue-direction-section"
+    }
+  }
+}
