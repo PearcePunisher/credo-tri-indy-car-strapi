@@ -1664,6 +1664,7 @@ export interface PluginUsersPermissionsUser
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    user_children: Schema.Attribute.Component<'shared.user-children', true>;
     user_date_of_birth: Schema.Attribute.Date;
     user_first_name: Schema.Attribute.String;
     user_image: Schema.Attribute.Media<

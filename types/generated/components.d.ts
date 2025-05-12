@@ -277,6 +277,25 @@ export interface SharedTeamSponsor extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedUserChildren extends Struct.ComponentSchema {
+  collectionName: 'components_shared_user_children';
+  info: {
+    displayName: 'user_children';
+    icon: 'briefcase';
+  };
+  attributes: {
+    user_child_DOB: Schema.Attribute.Date;
+    user_child_face_picture: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    user_child_first_name: Schema.Attribute.String;
+    user_child_gender: Schema.Attribute.String;
+    user_child_last_name: Schema.Attribute.String;
+    user_child_phone_number: Schema.Attribute.Integer;
+  };
+}
+
 export interface SharedVenueDirectionSection extends Struct.ComponentSchema {
   collectionName: 'components_shared_venue_direction_sections';
   info: {
@@ -340,6 +359,7 @@ declare module '@strapi/strapi' {
       'shared.team-colors': SharedTeamColors;
       'shared.team-logos': SharedTeamLogos;
       'shared.team-sponsor': SharedTeamSponsor;
+      'shared.user-children': SharedUserChildren;
       'shared.venue-direction-section': SharedVenueDirectionSection;
       'shared.venue-location': SharedVenueLocation;
       'shared.venue-location-date-times': SharedVenueLocationDateTimes;

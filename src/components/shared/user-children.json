@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_shared_user_children",
+  "info": {
+    "displayName": "user_children",
+    "icon": "briefcase"
+  },
+  "options": {},
+  "attributes": {
+    "user_child_first_name": {
+      "type": "string"
+    },
+    "user_child_last_name": {
+      "type": "string"
+    },
+    "user_child_face_picture": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "user_child_DOB": {
+      "type": "date"
+    },
+    "user_child_gender": {
+      "type": "string"
+    },
+    "user_child_phone_number": {
+      "type": "integer"
+    }
+  }
+}
