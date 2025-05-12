@@ -1,0 +1,35 @@
+{
+    "kind": "collectionType",
+    "collectionName": "venues",
+    "info": {
+        "singularName": "venue",
+        "pluralName": "venues",
+        "displayName": "Venue",
+        "description": ""
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "attributes": {
+        "venue_id": {
+            "type": "uid"
+        },
+        "venue_name": {
+            "type": "string"
+        },
+        "venue_addess": {
+            "type": "string"
+        },
+        "venue_address_maps_link": {
+            "type": "string"
+        },
+        "venue_description": {
+            "type": "blocks"
+        },
+        "venue_direction_section": {
+            "type": "component",
+            "repeatable": true,
+            "component": "shared.venue-direction-section"
+        }
+    }
+}

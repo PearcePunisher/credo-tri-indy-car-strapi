@@ -1093,6 +1093,40 @@ export interface ApiVenueDirectionVenueDirection
   };
 }
 
+export interface ApiVenueVenue extends Struct.CollectionTypeSchema {
+  collectionName: 'venues';
+  info: {
+    description: '';
+    displayName: 'Venue';
+    pluralName: 'venues';
+    singularName: 'venue';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::venue.venue'> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    venue_addess: Schema.Attribute.String;
+    venue_address_maps_link: Schema.Attribute.String;
+    venue_description: Schema.Attribute.Blocks;
+    venue_direction_section: Schema.Attribute.Component<
+      'shared.venue-direction-section',
+      true
+    >;
+    venue_id: Schema.Attribute.UID;
+    venue_name: Schema.Attribute.String;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -1624,6 +1658,7 @@ declare module '@strapi/strapi' {
       'api::sponsor.sponsor': ApiSponsorSponsor;
       'api::team-detail.team-detail': ApiTeamDetailTeamDetail;
       'api::venue-direction.venue-direction': ApiVenueDirectionVenueDirection;
+      'api::venue.venue': ApiVenueVenue;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
