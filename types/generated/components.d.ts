@@ -289,6 +289,35 @@ export interface SharedVenueDirectionSection extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedVenueLocation extends Struct.ComponentSchema {
+  collectionName: 'components_shared_venue_locations';
+  info: {
+    displayName: 'venue_location';
+    icon: 'bulletList';
+  };
+  attributes: {
+    venue_location_date_times: Schema.Attribute.Component<
+      'shared.venue-location-date-times',
+      true
+    >;
+    venue_location_description: Schema.Attribute.Blocks;
+    venue_location_details: Schema.Attribute.Blocks;
+    venue_location_map_link: Schema.Attribute.String;
+    venue_location_name: Schema.Attribute.String;
+  };
+}
+
+export interface SharedVenueLocationDateTimes extends Struct.ComponentSchema {
+  collectionName: 'components_shared_venue_location_date_times';
+  info: {
+    displayName: 'venue_location_date_times';
+  };
+  attributes: {
+    venue_location_close_date_time: Schema.Attribute.DateTime;
+    venue_location_open_date_time: Schema.Attribute.DateTime;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -312,6 +341,8 @@ declare module '@strapi/strapi' {
       'shared.team-logos': SharedTeamLogos;
       'shared.team-sponsor': SharedTeamSponsor;
       'shared.venue-direction-section': SharedVenueDirectionSection;
+      'shared.venue-location': SharedVenueLocation;
+      'shared.venue-location-date-times': SharedVenueLocationDateTimes;
     }
   }
 }

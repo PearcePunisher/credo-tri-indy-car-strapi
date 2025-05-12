@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "venue_locations",
+  "info": {
+    "singularName": "venue-location",
+    "pluralName": "venue-locations",
+    "displayName": "venue_location",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "venue_location_name": {
+      "type": "string"
+    },
+    "venue_location_description": {
+      "type": "blocks"
+    },
+    "venue_location_address_link": {
+      "type": "string"
+    },
+    "venue_location_available_date_times": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.venue-location-date-times"
+    },
+    "venue": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::venue.venue"
+    },
+    "venue_location_directions_to_find": {
+      "type": "blocks"
+    },
+    "venue_location_hero_image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

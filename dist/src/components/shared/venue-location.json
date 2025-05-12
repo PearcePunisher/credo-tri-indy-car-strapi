@@ -1,0 +1,28 @@
+{
+    "collectionName": "components_shared_venue_locations",
+    "info": {
+        "displayName": "venue_location",
+        "icon": "bulletList"
+    },
+    "options": {},
+    "attributes": {
+        "venue_location_name": {
+            "type": "string"
+        },
+        "venue_location_map_link": {
+            "type": "string"
+        },
+        "venue_location_description": {
+            "type": "blocks"
+        },
+        "venue_location_details": {
+            "type": "blocks"
+        },
+        "venue_location_date_times": {
+            "displayName": "venue_location_date_times",
+            "type": "component",
+            "repeatable": true,
+            "component": "shared.venue-location-date-times"
+        }
+    }
+}

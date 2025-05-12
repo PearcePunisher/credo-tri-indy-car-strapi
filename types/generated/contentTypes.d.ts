@@ -1093,6 +1093,47 @@ export interface ApiVenueDirectionVenueDirection
   };
 }
 
+export interface ApiVenueLocationVenueLocation
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'venue_locations';
+  info: {
+    description: '';
+    displayName: 'venue_location';
+    pluralName: 'venue-locations';
+    singularName: 'venue-location';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::venue-location.venue-location'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    venue: Schema.Attribute.Relation<'oneToOne', 'api::venue.venue'>;
+    venue_location_address_link: Schema.Attribute.String;
+    venue_location_available_date_times: Schema.Attribute.Component<
+      'shared.venue-location-date-times',
+      true
+    >;
+    venue_location_description: Schema.Attribute.Blocks;
+    venue_location_directions_to_find: Schema.Attribute.Blocks;
+    venue_location_hero_image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    venue_location_name: Schema.Attribute.String;
+  };
+}
+
 export interface ApiVenueVenue extends Struct.CollectionTypeSchema {
   collectionName: 'venues';
   info: {
@@ -1658,6 +1699,7 @@ declare module '@strapi/strapi' {
       'api::sponsor.sponsor': ApiSponsorSponsor;
       'api::team-detail.team-detail': ApiTeamDetailTeamDetail;
       'api::venue-direction.venue-direction': ApiVenueDirectionVenueDirection;
+      'api::venue-location.venue-location': ApiVenueLocationVenueLocation;
       'api::venue.venue': ApiVenueVenue;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

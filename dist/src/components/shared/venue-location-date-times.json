@@ -1,0 +1,15 @@
+{
+    "collectionName": "components_shared_venue_location_date_times",
+    "info": {
+        "displayName": "venue_location_date_times"
+    },
+    "options": {},
+    "attributes": {
+        "venue_location_open_date_time": {
+            "type": "datetime"
+        },
+        "venue_location_close_date_time": {
+            "type": "datetime"
+        }
+    }
+}
