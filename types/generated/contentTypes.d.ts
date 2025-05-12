@@ -874,8 +874,7 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
     event_schedule: Schema.Attribute.Component<'shared.event-schedule', true>;
     event_schedule_description: Schema.Attribute.Blocks;
     event_start_date_time: Schema.Attribute.DateTime;
-    event_venue_address: Schema.Attribute.String;
-    event_venue_address_link: Schema.Attribute.String;
+    event_venue: Schema.Attribute.Relation<'oneToOne', 'api::venue.venue'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::event.event'> &
       Schema.Attribute.Private;

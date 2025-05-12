@@ -64,11 +64,10 @@
         "event_end_date_time": {
             "type": "datetime"
         },
-        "event_venue_address": {
-            "type": "string"
-        },
-        "event_venue_address_link": {
-            "type": "string"
+        "event_venue": {
+            "type": "relation",
+            "relation": "oneToOne",
+            "target": "api::venue.venue"
         }
     }
 }
