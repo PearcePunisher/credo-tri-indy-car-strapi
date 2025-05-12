@@ -925,6 +925,10 @@ export interface ApiExperienceExperience extends Struct.CollectionTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    venue_location: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::venue-location.venue-location'
+    >;
   };
 }
 
@@ -1119,7 +1123,6 @@ export interface ApiVenueLocationVenueLocation
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    venue: Schema.Attribute.Relation<'oneToOne', 'api::venue.venue'>;
     venue_location_address_link: Schema.Attribute.String;
     venue_location_available_date_times: Schema.Attribute.Component<
       'shared.venue-location-date-times',
@@ -1131,6 +1134,10 @@ export interface ApiVenueLocationVenueLocation
       'images' | 'files' | 'videos' | 'audios'
     >;
     venue_location_name: Schema.Attribute.String;
+    venue_location_venue: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::venue.venue'
+    >;
   };
 }
 

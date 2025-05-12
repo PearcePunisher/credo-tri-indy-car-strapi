@@ -49,6 +49,11 @@
             "type": "relation",
             "relation": "oneToMany",
             "target": "api::sponsor.sponsor"
+        },
+        "venue_location": {
+            "type": "relation",
+            "relation": "oneToOne",
+            "target": "api::venue-location.venue-location"
         }
     }
 }
