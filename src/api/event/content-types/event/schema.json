@@ -68,6 +68,11 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::venue.venue"
+    },
+    "event_drivers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::driver.driver"
     }
   }
 }
