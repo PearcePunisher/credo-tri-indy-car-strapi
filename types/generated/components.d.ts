@@ -299,10 +299,16 @@ export interface SharedUserChildren extends Struct.ComponentSchema {
 export interface SharedVenueDirectionSection extends Struct.ComponentSchema {
   collectionName: 'components_shared_venue_direction_sections';
   info: {
+    description: '';
     displayName: 'venue_direction_section';
     icon: 'attachment';
   };
   attributes: {
+    venue_direction_attached_file: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    venue_direction_link: Schema.Attribute.String;
+    venue_direction_map_link: Schema.Attribute.String;
     venue_direction_section_details: Schema.Attribute.Blocks;
     venue_direction_section_title: Schema.Attribute.String;
   };

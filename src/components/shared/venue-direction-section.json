@@ -2,7 +2,8 @@
   "collectionName": "components_shared_venue_direction_sections",
   "info": {
     "displayName": "venue_direction_section",
-    "icon": "attachment"
+    "icon": "attachment",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -11,6 +12,22 @@
     },
     "venue_direction_section_details": {
       "type": "blocks"
+    },
+    "venue_direction_map_link": {
+      "type": "string"
+    },
+    "venue_direction_link": {
+      "type": "string"
+    },
+    "venue_direction_attached_file": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }
