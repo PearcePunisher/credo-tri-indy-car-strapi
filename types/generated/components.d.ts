@@ -128,10 +128,14 @@ export interface SharedEventDetailCallouts extends Struct.ComponentSchema {
 export interface SharedEventDownloadables extends Struct.ComponentSchema {
   collectionName: 'components_shared_event_downloadables';
   info: {
+    description: '';
     displayName: 'event_downloadables';
     icon: 'archive';
   };
   attributes: {
+    event_downloadables_cover_image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     event_downloadables_description: Schema.Attribute.Text;
     event_downloadables_file: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
