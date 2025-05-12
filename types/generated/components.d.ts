@@ -335,10 +335,12 @@ export interface SharedVenueLocation extends Struct.ComponentSchema {
 export interface SharedVenueLocationDateTimes extends Struct.ComponentSchema {
   collectionName: 'components_shared_venue_location_date_times';
   info: {
+    description: '';
     displayName: 'venue_location_date_times';
   };
   attributes: {
     venue_location_close_date_time: Schema.Attribute.DateTime;
+    venue_location_date_times_day_of_week: Schema.Attribute.String;
     venue_location_open_date_time: Schema.Attribute.DateTime;
   };
 }
