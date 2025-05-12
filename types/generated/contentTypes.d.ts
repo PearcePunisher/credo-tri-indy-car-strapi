@@ -860,6 +860,7 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
       'shared.event-downloadables',
       true
     >;
+    event_drivers: Schema.Attribute.Relation<'oneToMany', 'api::driver.driver'>;
     event_end_date_time: Schema.Attribute.DateTime;
     event_fact_file: Schema.Attribute.Component<
       'shared.event-fact-file',
