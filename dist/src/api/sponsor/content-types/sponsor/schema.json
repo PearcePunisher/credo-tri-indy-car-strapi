@@ -4,7 +4,8 @@
     "info": {
         "singularName": "sponsor",
         "pluralName": "sponsors",
-        "displayName": "Sponsor"
+        "displayName": "Sponsor",
+        "description": ""
     },
     "options": {
         "draftAndPublish": true
@@ -23,6 +24,20 @@
             "type": "text"
         },
         "sponsor_logo": {
+            "type": "media",
+            "multiple": false,
+            "required": false,
+            "allowedTypes": [
+                "images",
+                "files",
+                "videos",
+                "audios"
+            ]
+        },
+        "sponsor_link": {
+            "type": "string"
+        },
+        "sponsor_hero_image": {
             "allowedTypes": [
                 "images",
                 "files",
@@ -32,8 +47,11 @@
             "type": "media",
             "multiple": false
         },
-        "sponsor_link": {
-            "type": "string"
+        "sponsor_colors": {
+            "displayName": "sponsor colors",
+            "type": "component",
+            "repeatable": false,
+            "component": "shared.sponsor-colors"
         }
     }
 }
