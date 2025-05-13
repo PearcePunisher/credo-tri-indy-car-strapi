@@ -998,6 +998,7 @@ export interface ApiRestaurantRestaurant extends Struct.CollectionTypeSchema {
 export interface ApiSponsorSponsor extends Struct.CollectionTypeSchema {
   collectionName: 'sponsors';
   info: {
+    description: '';
     displayName: 'Sponsor';
     pluralName: 'sponsors';
     singularName: 'sponsor';
@@ -1016,7 +1017,11 @@ export interface ApiSponsorSponsor extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    sponsor_colors: Schema.Attribute.Component<'shared.sponsor-colors', false>;
     sponsor_description: Schema.Attribute.Text;
+    sponsor_hero_image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     sponsor_id: Schema.Attribute.UID;
     sponsor_link: Schema.Attribute.String;
     sponsor_logo: Schema.Attribute.Media<
