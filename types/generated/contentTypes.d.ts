@@ -829,7 +829,10 @@ export interface ApiDriverDriver extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    team: Schema.Attribute.Relation<'oneToOne', 'api::team-detail.team-detail'>;
+    team: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::team-detail.team-detail'
+    >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -876,6 +879,10 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
     event_schedule_description: Schema.Attribute.Blocks;
     event_start_date_time: Schema.Attribute.DateTime;
     event_venue: Schema.Attribute.Relation<'oneToOne', 'api::venue.venue'>;
+    experiences: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::experience.experience'
+    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::event.event'> &
       Schema.Attribute.Private;
@@ -920,7 +927,7 @@ export interface ApiExperienceExperience extends Struct.CollectionTypeSchema {
       'api::experience.experience'
     > &
       Schema.Attribute.Private;
-    parent_event: Schema.Attribute.Relation<'oneToOne', 'api::event.event'>;
+    parent_event: Schema.Attribute.Relation<'manyToOne', 'api::event.event'>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1050,6 +1057,7 @@ export interface ApiTeamDetailTeamDetail extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    drivers: Schema.Attribute.Relation<'oneToMany', 'api::driver.driver'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -1140,7 +1148,7 @@ export interface ApiVenueLocationVenueLocation
     >;
     venue_location_name: Schema.Attribute.String;
     venue_location_venue: Schema.Attribute.Relation<
-      'oneToOne',
+      'manyToOne',
       'api::venue.venue'
     >;
   };
@@ -1176,6 +1184,10 @@ export interface ApiVenueVenue extends Struct.CollectionTypeSchema {
       true
     >;
     venue_id: Schema.Attribute.UID;
+    venue_locations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::venue-location.venue-location'
+    >;
     venue_name: Schema.Attribute.String;
   };
 }

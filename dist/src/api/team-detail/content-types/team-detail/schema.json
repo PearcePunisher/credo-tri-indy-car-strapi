@@ -37,6 +37,12 @@
             "type": "component",
             "repeatable": false,
             "component": "shared.team-colors"
+        },
+        "drivers": {
+            "type": "relation",
+            "relation": "oneToMany",
+            "target": "api::driver.driver",
+            "mappedBy": "team"
         }
     }
 }

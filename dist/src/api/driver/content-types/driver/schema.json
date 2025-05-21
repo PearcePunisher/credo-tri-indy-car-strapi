@@ -303,8 +303,9 @@
         },
         "team": {
             "type": "relation",
-            "relation": "oneToOne",
-            "target": "api::team-detail.team-detail"
+            "relation": "manyToOne",
+            "target": "api::team-detail.team-detail",
+            "inversedBy": "drivers"
         },
         "driver_record": {
             "displayName": "driver_record",

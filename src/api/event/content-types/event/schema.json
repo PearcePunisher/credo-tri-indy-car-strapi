@@ -73,6 +73,12 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::driver.driver"
+    },
+    "experiences": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::experience.experience",
+      "mappedBy": "parent_event"
     }
   }
 }

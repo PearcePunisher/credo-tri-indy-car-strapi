@@ -30,6 +30,12 @@
             "type": "component",
             "repeatable": true,
             "component": "shared.venue-direction-section"
+        },
+        "venue_locations": {
+            "type": "relation",
+            "relation": "oneToMany",
+            "target": "api::venue-location.venue-location",
+            "mappedBy": "venue_location_venue"
         }
     }
 }
