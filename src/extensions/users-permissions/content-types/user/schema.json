@@ -101,6 +101,12 @@
     },
     "signed_waiver_link": {
       "type": "string"
+    },
+    "users_guests": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::users-guest.users-guest",
+      "mappedBy": "users_guest_parent_user"
     }
   }
 }

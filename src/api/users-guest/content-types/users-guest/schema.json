@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "users_guests",
+  "info": {
+    "singularName": "users-guest",
+    "pluralName": "users-guests",
+    "displayName": "users_guest",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "users_guest_id": {
+      "type": "uid"
+    },
+    "users_guest_first_name": {
+      "type": "string"
+    },
+    "users_guest_last_name": {
+      "type": "string"
+    },
+    "users_guest_dob": {
+      "type": "date"
+    },
+    "users_guest_phone_number": {
+      "type": "string"
+    },
+    "users_guest_profile_picture": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "users_guest_parent_user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "users_guests"
+    }
+  }
+}

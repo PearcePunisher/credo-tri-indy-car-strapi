@@ -1077,6 +1077,46 @@ export interface ApiTeamDetailTeamDetail extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiUsersGuestUsersGuest extends Struct.CollectionTypeSchema {
+  collectionName: 'users_guests';
+  info: {
+    description: '';
+    displayName: 'users_guest';
+    pluralName: 'users-guests';
+    singularName: 'users-guest';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::users-guest.users-guest'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    users_guest_dob: Schema.Attribute.Date;
+    users_guest_first_name: Schema.Attribute.String;
+    users_guest_id: Schema.Attribute.UID;
+    users_guest_last_name: Schema.Attribute.String;
+    users_guest_parent_user: Schema.Attribute.Relation<
+      'manyToOne',
+      'plugin::users-permissions.user'
+    >;
+    users_guest_phone_number: Schema.Attribute.String;
+    users_guest_profile_picture: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+  };
+}
+
 export interface ApiVenueDirectionVenueDirection
   extends Struct.CollectionTypeSchema {
   collectionName: 'venue_directions';
@@ -1700,6 +1740,10 @@ export interface PluginUsersPermissionsUser
       Schema.Attribute.SetMinMaxLength<{
         minLength: 3;
       }>;
+    users_guests: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::users-guest.users-guest'
+    >;
   };
 }
 
@@ -1725,6 +1769,7 @@ declare module '@strapi/strapi' {
       'api::restaurant.restaurant': ApiRestaurantRestaurant;
       'api::sponsor.sponsor': ApiSponsorSponsor;
       'api::team-detail.team-detail': ApiTeamDetailTeamDetail;
+      'api::users-guest.users-guest': ApiUsersGuestUsersGuest;
       'api::venue-direction.venue-direction': ApiVenueDirectionVenueDirection;
       'api::venue-location.venue-location': ApiVenueLocationVenueLocation;
       'api::venue.venue': ApiVenueVenue;
