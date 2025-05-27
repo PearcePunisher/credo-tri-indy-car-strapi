@@ -1,0 +1,29 @@
+{
+  "kind": "singleType",
+  "collectionName": "f_a_q_s",
+  "info": {
+    "singularName": "f-a-q",
+    "pluralName": "f-a-q-s",
+    "displayName": "F.A.Q.s"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "faqs_brand": {
+      "type": "blocks"
+    },
+    "faqs_team": {
+      "type": "blocks"
+    },
+    "faqs_event": {
+      "type": "blocks"
+    },
+    "faqs_venue": {
+      "type": "blocks"
+    },
+    "faqs_app": {
+      "type": "blocks"
+    }
+  }
+}

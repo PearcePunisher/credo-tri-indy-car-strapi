@@ -939,6 +939,35 @@ export interface ApiExperienceExperience extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiFAQFAQ extends Struct.SingleTypeSchema {
+  collectionName: 'f_a_q_s';
+  info: {
+    displayName: 'F.A.Q.s';
+    pluralName: 'f-a-q-s';
+    singularName: 'f-a-q';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    faqs_app: Schema.Attribute.Blocks;
+    faqs_brand: Schema.Attribute.Blocks;
+    faqs_event: Schema.Attribute.Blocks;
+    faqs_team: Schema.Attribute.Blocks;
+    faqs_venue: Schema.Attribute.Blocks;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::f-a-q.f-a-q'> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   collectionName: 'globals';
   info: {
@@ -1765,6 +1794,7 @@ declare module '@strapi/strapi' {
       'api::driver.driver': ApiDriverDriver;
       'api::event.event': ApiEventEvent;
       'api::experience.experience': ApiExperienceExperience;
+      'api::f-a-q.f-a-q': ApiFAQFAQ;
       'api::global.global': ApiGlobalGlobal;
       'api::restaurant.restaurant': ApiRestaurantRestaurant;
       'api::sponsor.sponsor': ApiSponsorSponsor;
