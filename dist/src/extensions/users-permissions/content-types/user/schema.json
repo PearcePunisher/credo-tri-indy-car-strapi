@@ -105,6 +105,21 @@
             "relation": "oneToMany",
             "target": "api::users-guest.users-guest",
             "mappedBy": "users_guest_parent_user"
+        },
+        "user_qr_code": {
+            "allowedTypes": [
+                "images",
+                "files",
+                "videos",
+                "audios"
+            ],
+            "type": "media",
+            "multiple": false
+        },
+        "user_events_authorized": {
+            "type": "relation",
+            "relation": "oneToMany",
+            "target": "api::event.event"
         }
     }
 }

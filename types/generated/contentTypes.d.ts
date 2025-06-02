@@ -1752,9 +1752,16 @@ export interface PluginUsersPermissionsUser
       Schema.Attribute.Private;
     user_children: Schema.Attribute.Component<'shared.user-children', true>;
     user_date_of_birth: Schema.Attribute.Date;
+    user_events_authorized: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::event.event'
+    >;
     user_first_name: Schema.Attribute.String;
     user_image: Schema.Attribute.Media<'images' | 'files'>;
     user_last_name: Schema.Attribute.String;
+    user_qr_code: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     user_sponsor_inviter: Schema.Attribute.Relation<
       'oneToOne',
       'api::sponsor.sponsor'
