@@ -1140,9 +1140,7 @@ export interface ApiUsersGuestUsersGuest extends Struct.CollectionTypeSchema {
       'plugin::users-permissions.user'
     >;
     users_guest_phone_number: Schema.Attribute.String;
-    users_guest_profile_picture: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios'
-    >;
+    users_guest_profile_picture: Schema.Attribute.Media<'images' | 'files'>;
   };
 }
 
@@ -1755,9 +1753,7 @@ export interface PluginUsersPermissionsUser
     user_children: Schema.Attribute.Component<'shared.user-children', true>;
     user_date_of_birth: Schema.Attribute.Date;
     user_first_name: Schema.Attribute.String;
-    user_image: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios'
-    >;
+    user_image: Schema.Attribute.Media<'images' | 'files'>;
     user_last_name: Schema.Attribute.String;
     user_sponsor_inviter: Schema.Attribute.Relation<
       'oneToOne',
