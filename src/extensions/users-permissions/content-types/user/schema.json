@@ -88,12 +88,6 @@
       "relation": "oneToOne",
       "target": "api::sponsor.sponsor"
     },
-    "user_children": {
-      "displayName": "user_children",
-      "type": "component",
-      "repeatable": true,
-      "component": "shared.user-children"
-    },
     "signed_waiver": {
       "type": "boolean"
     },
@@ -107,14 +101,15 @@
       "mappedBy": "users_guest_parent_user"
     },
     "user_qr_code": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "user_events_authorized": {
       "type": "relation",

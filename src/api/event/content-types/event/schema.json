@@ -79,6 +79,14 @@
       "relation": "oneToMany",
       "target": "api::experience.experience",
       "mappedBy": "parent_event"
+    },
+    "event_welcome_video": {
+      "allowedTypes": [
+        "files",
+        "videos"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

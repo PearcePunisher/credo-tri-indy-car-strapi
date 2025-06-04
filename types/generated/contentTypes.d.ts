@@ -879,6 +879,7 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
     event_schedule_description: Schema.Attribute.Blocks;
     event_start_date_time: Schema.Attribute.DateTime;
     event_venue: Schema.Attribute.Relation<'oneToOne', 'api::venue.venue'>;
+    event_welcome_video: Schema.Attribute.Media<'files' | 'videos'>;
     experiences: Schema.Attribute.Relation<
       'oneToMany',
       'api::experience.experience'
@@ -1003,6 +1004,7 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
 export interface ApiRestaurantRestaurant extends Struct.CollectionTypeSchema {
   collectionName: 'restaurants';
   info: {
+    description: '';
     displayName: 'Restaurant';
     pluralName: 'restaurants';
     singularName: 'restaurant';
@@ -1025,6 +1027,7 @@ export interface ApiRestaurantRestaurant extends Struct.CollectionTypeSchema {
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
     publishedAt: Schema.Attribute.DateTime;
+    restaurant_locaiton: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1750,7 +1753,6 @@ export interface PluginUsersPermissionsUser
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    user_children: Schema.Attribute.Component<'shared.user-children', true>;
     user_date_of_birth: Schema.Attribute.Date;
     user_events_authorized: Schema.Attribute.Relation<
       'oneToMany',
