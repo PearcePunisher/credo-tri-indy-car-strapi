@@ -76,11 +76,12 @@ export interface SharedDriverRecord extends Struct.ComponentSchema {
 export interface SharedDriverSocials extends Struct.ComponentSchema {
   collectionName: 'components_shared_driver_socials';
   info: {
-    displayName: 'driver_socials';
+    description: '';
+    displayName: 'social_meida_links';
     icon: 'cast';
   };
   attributes: {
-    driver_social_length: Schema.Attribute.String;
+    driver_social_link: Schema.Attribute.String;
     social_platform: Schema.Attribute.Enumeration<
       [
         'Facebook',
@@ -233,11 +234,14 @@ export interface SharedSlider extends Struct.ComponentSchema {
 export interface SharedSponsorColors extends Struct.ComponentSchema {
   collectionName: 'components_shared_sponsor_colors';
   info: {
+    description: '';
     displayName: 'sponsor colors';
     icon: 'brush';
   };
   attributes: {
     sponsor_primary_color: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    sponsor_quaternary_color: Schema.Attribute.String &
       Schema.Attribute.CustomField<'plugin::color-picker.color'>;
     sponsor_secondary_color: Schema.Attribute.String &
       Schema.Attribute.CustomField<'plugin::color-picker.color'>;
@@ -280,6 +284,15 @@ export interface SharedTeamLogos extends Struct.ComponentSchema {
       true
     >;
   };
+}
+
+export interface SharedTeamSocials extends Struct.ComponentSchema {
+  collectionName: 'components_shared_team_socials';
+  info: {
+    displayName: 'team_socials';
+    icon: 'apps';
+  };
+  attributes: {};
 }
 
 export interface SharedTeamSponsor extends Struct.ComponentSchema {
@@ -383,6 +396,7 @@ declare module '@strapi/strapi' {
       'shared.sponsor-colors': SharedSponsorColors;
       'shared.team-colors': SharedTeamColors;
       'shared.team-logos': SharedTeamLogos;
+      'shared.team-socials': SharedTeamSocials;
       'shared.team-sponsor': SharedTeamSponsor;
       'shared.user-children': SharedUserChildren;
       'shared.venue-direction-section': SharedVenueDirectionSection;

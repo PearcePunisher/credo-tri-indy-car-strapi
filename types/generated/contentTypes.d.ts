@@ -879,6 +879,7 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
     event_schedule_description: Schema.Attribute.Blocks;
     event_start_date_time: Schema.Attribute.DateTime;
     event_venue: Schema.Attribute.Relation<'oneToOne', 'api::venue.venue'>;
+    event_website_link: Schema.Attribute.String;
     event_welcome_video: Schema.Attribute.Media<'files' | 'videos'>;
     experiences: Schema.Attribute.Relation<
       'oneToMany',
@@ -915,13 +916,16 @@ export interface ApiExperienceExperience extends Struct.CollectionTypeSchema {
     experience_image: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
     >;
-    experience_location: Schema.Attribute.String;
     experience_sponsors: Schema.Attribute.Relation<
       'oneToMany',
       'api::sponsor.sponsor'
     >;
     experience_start_date_time: Schema.Attribute.DateTime;
     experience_title: Schema.Attribute.String;
+    experience_venue_location: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::venue-location.venue-location'
+    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -933,10 +937,6 @@ export interface ApiExperienceExperience extends Struct.CollectionTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    venue_location: Schema.Attribute.Relation<
-      'oneToOne',
-      'api::venue-location.venue-location'
-    >;
   };
 }
 
@@ -1005,7 +1005,7 @@ export interface ApiRestaurantRestaurant extends Struct.CollectionTypeSchema {
   collectionName: 'restaurants';
   info: {
     description: '';
-    displayName: 'Restaurant';
+    displayName: 'Dining Options';
     pluralName: 'restaurants';
     singularName: 'restaurant';
   };
@@ -1102,7 +1102,9 @@ export interface ApiTeamDetailTeamDetail extends Struct.CollectionTypeSchema {
     team_id: Schema.Attribute.UID;
     team_logos: Schema.Attribute.Component<'shared.team-logos', false>;
     team_name: Schema.Attribute.String;
+    team_socials: Schema.Attribute.Component<'shared.driver-socials', true>;
     team_sponsors: Schema.Attribute.Component<'shared.team-sponsor', false>;
+    team_website_link: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

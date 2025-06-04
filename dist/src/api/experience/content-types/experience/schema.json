@@ -40,9 +40,6 @@
             "target": "api::event.event",
             "inversedBy": "experiences"
         },
-        "experience_location": {
-            "type": "string"
-        },
         "experience_end_date_time": {
             "type": "datetime"
         },
@@ -51,7 +48,7 @@
             "relation": "oneToMany",
             "target": "api::sponsor.sponsor"
         },
-        "venue_location": {
+        "experience_venue_location": {
             "type": "relation",
             "relation": "oneToOne",
             "target": "api::venue-location.venue-location"

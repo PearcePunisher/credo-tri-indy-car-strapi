@@ -1,8 +1,9 @@
 {
     "collectionName": "components_shared_driver_socials",
     "info": {
-        "displayName": "driver_socials",
-        "icon": "cast"
+        "displayName": "social_meida_links",
+        "icon": "cast",
+        "description": ""
     },
     "options": {},
     "attributes": {
@@ -36,7 +37,7 @@
                 "Clubhouse"
             ]
         },
-        "driver_social_length": {
+        "driver_social_link": {
             "type": "string"
         }
     }
