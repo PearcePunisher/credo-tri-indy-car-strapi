@@ -19,8 +19,29 @@
     "Description": {
       "type": "blocks"
     },
-    "restaurant_locaiton": {
+    "dining_option_locaiton": {
       "type": "string"
+    },
+    "dining_option_event": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::event.event"
+    },
+    "dining_option_image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "article": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::article.article"
     }
   }
 }
