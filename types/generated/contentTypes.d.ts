@@ -493,6 +493,7 @@ export interface ApiCarCar extends Struct.CollectionTypeSchema {
     car_material: Schema.Attribute.Component<'shared.car-materials', true>;
     car_name_human_readable: Schema.Attribute.String &
       Schema.Attribute.Required;
+    car_number: Schema.Attribute.Integer;
     car_other_spec: Schema.Attribute.Component<'shared.car-other-specs', true>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1107,8 +1108,14 @@ export interface ApiTeamDetailTeamDetail extends Struct.CollectionTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     team_colors: Schema.Attribute.Component<'shared.team-colors', false>;
     team_descriptions: Schema.Attribute.RichText;
+    team_engine_manufacturer: Schema.Attribute.Component<
+      'shared.team-engine-manufacturer',
+      true
+    >;
+    team_headquarters: Schema.Attribute.String;
     team_id: Schema.Attribute.UID;
     team_logos: Schema.Attribute.Component<'shared.team-logos', false>;
+    team_merch_link: Schema.Attribute.String;
     team_name: Schema.Attribute.String;
     team_socials: Schema.Attribute.Component<'shared.driver-socials', true>;
     team_sponsors: Schema.Attribute.Component<'shared.team-sponsor', false>;

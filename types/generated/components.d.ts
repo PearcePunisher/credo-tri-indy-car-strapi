@@ -268,6 +268,20 @@ export interface SharedTeamColors extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedTeamEngineManufacturer extends Struct.ComponentSchema {
+  collectionName: 'components_shared_team_engine_manufacturers';
+  info: {
+    displayName: 'team_engine_manufacturer';
+    icon: 'brush';
+  };
+  attributes: {
+    engine_manufacturer_logo: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    engine_manufacturer_name: Schema.Attribute.String;
+  };
+}
+
 export interface SharedTeamLogos extends Struct.ComponentSchema {
   collectionName: 'components_shared_team_logos';
   info: {
@@ -395,6 +409,7 @@ declare module '@strapi/strapi' {
       'shared.slider': SharedSlider;
       'shared.sponsor-colors': SharedSponsorColors;
       'shared.team-colors': SharedTeamColors;
+      'shared.team-engine-manufacturer': SharedTeamEngineManufacturer;
       'shared.team-logos': SharedTeamLogos;
       'shared.team-socials': SharedTeamSocials;
       'shared.team-sponsor': SharedTeamSponsor;

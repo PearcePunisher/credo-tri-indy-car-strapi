@@ -50,6 +50,9 @@
     "car_name_human_readable": {
       "type": "string",
       "required": true
+    },
+    "car_number": {
+      "type": "integer"
     }
   }
 }

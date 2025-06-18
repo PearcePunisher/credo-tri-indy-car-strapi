@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_shared_team_engine_manufacturers",
+  "info": {
+    "displayName": "team_engine_manufacturer",
+    "icon": "brush"
+  },
+  "options": {},
+  "attributes": {
+    "engine_manufacturer_name": {
+      "type": "string"
+    },
+    "engine_manufacturer_logo": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

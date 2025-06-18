@@ -51,6 +51,18 @@
             "type": "component",
             "repeatable": true,
             "component": "shared.driver-socials"
+        },
+        "team_merch_link": {
+            "type": "string"
+        },
+        "team_engine_manufacturer": {
+            "displayName": "team_engine_manufacturer",
+            "type": "component",
+            "repeatable": true,
+            "component": "shared.team-engine-manufacturer"
+        },
+        "team_headquarters": {
+            "type": "string"
         }
     }
 }
