@@ -61,6 +61,42 @@ export interface SharedCarOtherSpecs extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedDriverCareerStats extends Struct.ComponentSchema {
+  collectionName: 'components_shared_driver_career_stats';
+  info: {
+    description: '';
+    displayName: 'driver_career_stats';
+    icon: 'bulletList';
+  };
+  attributes: {
+    driver_career_stats_championships: Schema.Attribute.Integer;
+    driver_career_stats_indy_500_wins: Schema.Attribute.Integer;
+    driver_career_stats_laps_led: Schema.Attribute.Integer;
+    driver_career_stats_poles: Schema.Attribute.Integer;
+    driver_career_stats_starts: Schema.Attribute.Integer;
+    driver_career_stats_top_10: Schema.Attribute.Integer;
+    driver_career_stats_top_5: Schema.Attribute.Integer;
+    driver_career_stats_wins: Schema.Attribute.Integer;
+  };
+}
+
+export interface SharedDriverCurrentSeasonStats extends Struct.ComponentSchema {
+  collectionName: 'components_shared_driver_current_season_stats';
+  info: {
+    displayName: 'driver_current_season_stats';
+  };
+  attributes: {
+    driver_current_season_stats_laps_led: Schema.Attribute.Integer;
+    driver_current_season_stats_points: Schema.Attribute.Integer;
+    driver_current_season_stats_poles: Schema.Attribute.Integer;
+    driver_current_season_stats_rank: Schema.Attribute.Integer;
+    driver_current_season_stats_starts: Schema.Attribute.Integer;
+    driver_current_season_stats_top_10: Schema.Attribute.Integer;
+    driver_current_season_stats_top_5: Schema.Attribute.Integer;
+    driver_current_season_stats_wins: Schema.Attribute.Integer;
+  };
+}
+
 export interface SharedDriverRecord extends Struct.ComponentSchema {
   collectionName: 'components_shared_driver_records';
   info: {
@@ -396,6 +432,8 @@ declare module '@strapi/strapi' {
       'shared.car-images': SharedCarImages;
       'shared.car-materials': SharedCarMaterials;
       'shared.car-other-specs': SharedCarOtherSpecs;
+      'shared.driver-career-stats': SharedDriverCareerStats;
+      'shared.driver-current-season-stats': SharedDriverCurrentSeasonStats;
       'shared.driver-record': SharedDriverRecord;
       'shared.driver-socials': SharedDriverSocials;
       'shared.event-detail-callouts': SharedEventDetailCallouts;

@@ -1,0 +1,35 @@
+{
+    "collectionName": "components_shared_driver_career_stats",
+    "info": {
+        "displayName": "driver_career_stats",
+        "icon": "bulletList",
+        "description": ""
+    },
+    "options": {},
+    "attributes": {
+        "driver_career_stats_starts": {
+            "type": "integer"
+        },
+        "driver_career_stats_wins": {
+            "type": "integer"
+        },
+        "driver_career_stats_championships": {
+            "type": "integer"
+        },
+        "driver_career_stats_indy_500_wins": {
+            "type": "integer"
+        },
+        "driver_career_stats_poles": {
+            "type": "integer"
+        },
+        "driver_career_stats_top_5": {
+            "type": "integer"
+        },
+        "driver_career_stats_top_10": {
+            "type": "integer"
+        },
+        "driver_career_stats_laps_led": {
+            "type": "integer"
+        }
+    }
+}

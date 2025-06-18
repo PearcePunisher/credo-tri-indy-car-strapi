@@ -557,6 +557,10 @@ export interface ApiDriverDriver extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     driver_bio: Schema.Attribute.RichText;
+    driver_career_stats: Schema.Attribute.Component<
+      'shared.driver-career-stats',
+      false
+    >;
     driver_country_origin: Schema.Attribute.Enumeration<
       [
         'AD',
@@ -812,13 +816,20 @@ export interface ApiDriverDriver extends Struct.CollectionTypeSchema {
         'ZW',
       ]
     >;
+    driver_current_season_stats: Schema.Attribute.Component<
+      'shared.driver-current-season-stats',
+      false
+    >;
+    driver_DOB: Schema.Attribute.Date;
     driver_fname: Schema.Attribute.String;
+    driver_home_town: Schema.Attribute.String;
     Driver_ID: Schema.Attribute.UID;
     driver_image: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
     >;
     driver_lname: Schema.Attribute.String;
     driver_record: Schema.Attribute.Component<'shared.driver-record', true>;
+    driver_residence: Schema.Attribute.String;
     driver_social_medias: Schema.Attribute.Component<
       'shared.driver-socials',
       true
@@ -1112,6 +1123,7 @@ export interface ApiTeamDetailTeamDetail extends Struct.CollectionTypeSchema {
       'shared.team-engine-manufacturer',
       true
     >;
+    team_established_date: Schema.Attribute.Date;
     team_headquarters: Schema.Attribute.String;
     team_id: Schema.Attribute.UID;
     team_logos: Schema.Attribute.Component<'shared.team-logos', false>;

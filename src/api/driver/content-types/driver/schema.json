@@ -312,6 +312,27 @@
       "type": "component",
       "repeatable": true,
       "component": "shared.driver-record"
+    },
+    "driver_current_season_stats": {
+      "displayName": "driver_current_season_stats",
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.driver-current-season-stats"
+    },
+    "driver_career_stats": {
+      "displayName": "driver_career_stats",
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.driver-career-stats"
+    },
+    "driver_home_town": {
+      "type": "string"
+    },
+    "driver_residence": {
+      "type": "string"
+    },
+    "driver_DOB": {
+      "type": "date"
     }
   }
 }
