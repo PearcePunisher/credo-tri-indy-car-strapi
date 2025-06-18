@@ -483,6 +483,7 @@ export interface ApiCarCar extends Struct.CollectionTypeSchema {
   };
   attributes: {
     car_chassis: Schema.Attribute.Component<'shared.car-chassis', true>;
+    car_class: Schema.Attribute.String;
     car_construction: Schema.Attribute.Component<
       'shared.car-construction',
       true

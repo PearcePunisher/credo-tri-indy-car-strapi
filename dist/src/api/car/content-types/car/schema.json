@@ -53,6 +53,9 @@
         },
         "car_number": {
             "type": "integer"
+        },
+        "car_class": {
+            "type": "string"
         }
     }
 }
