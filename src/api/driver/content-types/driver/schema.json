@@ -333,6 +333,12 @@
     },
     "driver_DOB": {
       "type": "date"
+    },
+    "driver_merch_link": {
+      "type": "string"
+    },
+    "driver_website_link": {
+      "type": "string"
     }
   }
 }

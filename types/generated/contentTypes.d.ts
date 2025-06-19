@@ -829,12 +829,14 @@ export interface ApiDriverDriver extends Struct.CollectionTypeSchema {
       'images' | 'files' | 'videos' | 'audios'
     >;
     driver_lname: Schema.Attribute.String;
+    driver_merch_link: Schema.Attribute.String;
     driver_record: Schema.Attribute.Component<'shared.driver-record', true>;
     driver_residence: Schema.Attribute.String;
     driver_social_medias: Schema.Attribute.Component<
       'shared.driver-socials',
       true
     >;
+    driver_website_link: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
