@@ -26,6 +26,9 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::sponsor.sponsor"
+    },
+    "Event_Code_Linker_Clean_Name": {
+      "type": "string"
     }
   }
 }

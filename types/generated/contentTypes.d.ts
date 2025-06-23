@@ -871,6 +871,7 @@ export interface ApiEventCodeLinkerEventCodeLinker
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     event: Schema.Attribute.Relation<'oneToOne', 'api::event.event'>;
+    Event_Code_Linker_Clean_Name: Schema.Attribute.String;
     event_code_linker_valid_codes: Schema.Attribute.Component<
       'shared.event-code-linker-valid-codes',
       true
