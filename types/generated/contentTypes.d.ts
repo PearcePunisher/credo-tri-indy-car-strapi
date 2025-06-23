@@ -882,6 +882,7 @@ export interface ApiEventCodeLinkerEventCodeLinker
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    sponsor: Schema.Attribute.Relation<'oneToOne', 'api::sponsor.sponsor'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
