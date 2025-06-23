@@ -150,6 +150,19 @@ export interface SharedDriverSocials extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedEventCodeLinkerValidCodes
+  extends Struct.ComponentSchema {
+  collectionName: 'components_shared_event_code_linker_valid_codes';
+  info: {
+    description: '';
+    displayName: 'event_code_linker_valid_codes';
+    icon: 'apps';
+  };
+  attributes: {
+    event_code_linker_code: Schema.Attribute.String;
+  };
+}
+
 export interface SharedEventDetailCallouts extends Struct.ComponentSchema {
   collectionName: 'components_shared_event_detail_callouts';
   info: {
@@ -436,6 +449,7 @@ declare module '@strapi/strapi' {
       'shared.driver-current-season-stats': SharedDriverCurrentSeasonStats;
       'shared.driver-record': SharedDriverRecord;
       'shared.driver-socials': SharedDriverSocials;
+      'shared.event-code-linker-valid-codes': SharedEventCodeLinkerValidCodes;
       'shared.event-detail-callouts': SharedEventDetailCallouts;
       'shared.event-downloadables': SharedEventDownloadables;
       'shared.event-fact-file': SharedEventFactFile;

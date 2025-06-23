@@ -1,0 +1,14 @@
+{
+    "collectionName": "components_shared_event_code_linker_valid_codes",
+    "info": {
+        "displayName": "event_code_linker_valid_codes",
+        "icon": "apps",
+        "description": ""
+    },
+    "options": {},
+    "attributes": {
+        "event_code_linker_code": {
+            "type": "string"
+        }
+    }
+}

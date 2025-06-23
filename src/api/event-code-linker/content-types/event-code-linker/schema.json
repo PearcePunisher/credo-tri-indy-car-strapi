@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "event_code_linkers",
+  "info": {
+    "singularName": "event-code-linker",
+    "pluralName": "event-code-linkers",
+    "displayName": "event_code_linker",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "event": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::event.event"
+    },
+    "event_code_linker_valid_codes": {
+      "displayName": "event_code_linker_valid_codes",
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.event-code-linker-valid-codes"
+    }
+  }
+}

@@ -854,6 +854,40 @@ export interface ApiDriverDriver extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiEventCodeLinkerEventCodeLinker
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'event_code_linkers';
+  info: {
+    description: '';
+    displayName: 'event_code_linker';
+    pluralName: 'event-code-linkers';
+    singularName: 'event-code-linker';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    event: Schema.Attribute.Relation<'oneToOne', 'api::event.event'>;
+    event_code_linker_valid_codes: Schema.Attribute.Component<
+      'shared.event-code-linker-valid-codes',
+      true
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::event-code-linker.event-code-linker'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiEventEvent extends Struct.CollectionTypeSchema {
   collectionName: 'events';
   info: {
@@ -1829,6 +1863,7 @@ declare module '@strapi/strapi' {
       'api::car.car': ApiCarCar;
       'api::category.category': ApiCategoryCategory;
       'api::driver.driver': ApiDriverDriver;
+      'api::event-code-linker.event-code-linker': ApiEventCodeLinkerEventCodeLinker;
       'api::event.event': ApiEventEvent;
       'api::experience.experience': ApiExperienceExperience;
       'api::f-a-q.f-a-q': ApiFAQFAQ;
