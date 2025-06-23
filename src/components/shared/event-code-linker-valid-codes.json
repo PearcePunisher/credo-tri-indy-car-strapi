@@ -9,6 +9,11 @@
   "attributes": {
     "event_code_linker_code": {
       "type": "string"
+    },
+    "sponsor": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::sponsor.sponsor"
     }
   }
 }

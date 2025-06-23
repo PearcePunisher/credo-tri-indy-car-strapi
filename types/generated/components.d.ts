@@ -160,6 +160,7 @@ export interface SharedEventCodeLinkerValidCodes
   };
   attributes: {
     event_code_linker_code: Schema.Attribute.String;
+    sponsor: Schema.Attribute.Relation<'oneToOne', 'api::sponsor.sponsor'>;
   };
 }
 

@@ -22,11 +22,6 @@
       "repeatable": true,
       "component": "shared.event-code-linker-valid-codes"
     },
-    "sponsor": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::sponsor.sponsor"
-    },
     "Event_Code_Linker_Clean_Name": {
       "type": "string"
     }
