@@ -91,6 +91,12 @@
     },
     "event_website_link": {
       "type": "string"
+    },
+    "event_race_details": {
+      "displayName": "event_race_details",
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.event-race-details"
     }
   }
 }

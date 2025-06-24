@@ -206,6 +206,20 @@ export interface SharedEventFactFile extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedEventRaceDetails extends Struct.ComponentSchema {
+  collectionName: 'components_shared_event_race_details';
+  info: {
+    displayName: 'event_race_details';
+    icon: 'apps';
+  };
+  attributes: {
+    race_class: Schema.Attribute.String;
+    race_end_time: Schema.Attribute.DateTime;
+    race_name: Schema.Attribute.String;
+    race_start_time: Schema.Attribute.DateTime;
+  };
+}
+
 export interface SharedEventSchedule extends Struct.ComponentSchema {
   collectionName: 'components_shared_event_schedules';
   info: {
@@ -453,6 +467,7 @@ declare module '@strapi/strapi' {
       'shared.event-detail-callouts': SharedEventDetailCallouts;
       'shared.event-downloadables': SharedEventDownloadables;
       'shared.event-fact-file': SharedEventFactFile;
+      'shared.event-race-details': SharedEventRaceDetails;
       'shared.event-schedule': SharedEventSchedule;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;

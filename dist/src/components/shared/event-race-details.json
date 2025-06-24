@@ -1,0 +1,22 @@
+{
+    "collectionName": "components_shared_event_race_details",
+    "info": {
+        "displayName": "event_race_details",
+        "icon": "apps"
+    },
+    "options": {},
+    "attributes": {
+        "race_name": {
+            "type": "string"
+        },
+        "race_class": {
+            "type": "string"
+        },
+        "race_start_time": {
+            "type": "datetime"
+        },
+        "race_end_time": {
+            "type": "datetime"
+        }
+    }
+}
