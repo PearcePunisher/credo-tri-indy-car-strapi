@@ -836,6 +836,10 @@ export interface ApiDriverDriver extends Struct.CollectionTypeSchema {
       'shared.driver-socials',
       true
     >;
+    driver_sponsors: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::sponsor.sponsor'
+    >;
     driver_website_link: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -883,6 +887,7 @@ export interface ApiEventCodeLinkerEventCodeLinker
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    sponsor: Schema.Attribute.Relation<'oneToOne', 'api::sponsor.sponsor'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1218,6 +1223,7 @@ export interface ApiVenueDirectionVenueDirection
   extends Struct.CollectionTypeSchema {
   collectionName: 'venue_directions';
   info: {
+    description: '';
     displayName: 'Venue_Direction';
     pluralName: 'venue-directions';
     singularName: 'venue-direction';
@@ -1239,6 +1245,7 @@ export interface ApiVenueDirectionVenueDirection
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    venue: Schema.Attribute.Relation<'oneToOne', 'api::venue.venue'>;
     venue_direction_description: Schema.Attribute.Blocks;
     venue_direction_section: Schema.Attribute.Component<
       'shared.venue-direction-section',
@@ -1319,6 +1326,10 @@ export interface ApiVenueVenue extends Struct.CollectionTypeSchema {
     venue_direction_section: Schema.Attribute.Component<
       'shared.venue-direction-section',
       true
+    >;
+    venue_directions: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::venue-direction.venue-direction'
     >;
     venue_id: Schema.Attribute.UID;
     venue_locations: Schema.Attribute.Relation<

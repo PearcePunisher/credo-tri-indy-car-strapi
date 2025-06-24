@@ -36,6 +36,12 @@
             "relation": "oneToMany",
             "target": "api::venue-location.venue-location",
             "mappedBy": "venue_location_venue"
+        },
+        "venue_directions": {
+            "type": "relation",
+            "relation": "oneToOne",
+            "target": "api::venue-direction.venue-direction",
+            "mappedBy": "venue"
         }
     }
 }

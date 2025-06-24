@@ -339,6 +339,11 @@
     },
     "driver_website_link": {
       "type": "string"
+    },
+    "driver_sponsors": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::sponsor.sponsor"
     }
   }
 }
