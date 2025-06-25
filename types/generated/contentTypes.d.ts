@@ -1850,6 +1850,7 @@ export interface PluginUsersPermissionsUser
     user_first_name: Schema.Attribute.String;
     user_image: Schema.Attribute.Media<'images' | 'files'>;
     user_last_name: Schema.Attribute.String;
+    user_phone_number: Schema.Attribute.String;
     user_qr_code: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
     >;

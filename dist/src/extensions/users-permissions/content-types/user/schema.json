@@ -120,6 +120,9 @@
             "type": "relation",
             "relation": "oneToOne",
             "target": "api::event-code-linker.event-code-linker"
+        },
+        "user_phone_number": {
+            "type": "string"
         }
     }
 }
