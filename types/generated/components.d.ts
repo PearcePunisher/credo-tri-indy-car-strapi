@@ -302,13 +302,13 @@ export interface SharedSponsorColors extends Struct.ComponentSchema {
     icon: 'brush';
   };
   attributes: {
-    sponsor_primary_color: Schema.Attribute.String &
+    partner_primary_color: Schema.Attribute.String &
       Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    sponsor_quaternary_color: Schema.Attribute.String &
+    partner_quaternary_color: Schema.Attribute.String &
       Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    sponsor_secondary_color: Schema.Attribute.String &
+    partner_secondary_color: Schema.Attribute.String &
       Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    sponsor_tertiary_color: Schema.Attribute.String &
+    partner_tertiary_color: Schema.Attribute.String &
       Schema.Attribute.CustomField<'plugin::color-picker.color'>;
   };
 }
@@ -379,7 +379,7 @@ export interface SharedTeamSponsor extends Struct.ComponentSchema {
     displayName: 'team_sponsor';
   };
   attributes: {
-    sponsors: Schema.Attribute.Relation<'oneToMany', 'api::sponsor.sponsor'>;
+    partners: Schema.Attribute.Relation<'oneToMany', 'api::sponsor.sponsor'>;
   };
 }
 

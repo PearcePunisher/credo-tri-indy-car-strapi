@@ -4,26 +4,26 @@
     "info": {
         "singularName": "sponsor",
         "pluralName": "sponsors",
-        "displayName": "Sponsor",
+        "displayName": "Partner",
         "description": ""
     },
     "options": {
         "draftAndPublish": true
     },
     "attributes": {
-        "sponsor_id": {
+        "partner_id": {
             "type": "uid"
         },
-        "sponsor_name": {
+        "partner_name": {
             "type": "string"
         },
-        "sponsor_slogan": {
+        "partner_slogan": {
             "type": "string"
         },
-        "sponsor_description": {
+        "partner_description": {
             "type": "text"
         },
-        "sponsor_logo": {
+        "partner_logo": {
             "type": "media",
             "multiple": false,
             "required": false,
@@ -34,20 +34,21 @@
                 "audios"
             ]
         },
-        "sponsor_link": {
+        "partner_link": {
             "type": "string"
         },
-        "sponsor_hero_image": {
+        "partner_hero_image": {
+            "type": "media",
+            "multiple": false,
+            "required": false,
             "allowedTypes": [
                 "images",
                 "files",
                 "videos",
                 "audios"
-            ],
-            "type": "media",
-            "multiple": false
+            ]
         },
-        "sponsor_colors": {
+        "partner_colors": {
             "displayName": "sponsor colors",
             "type": "component",
             "repeatable": false,

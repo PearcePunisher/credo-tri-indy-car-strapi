@@ -25,7 +25,7 @@
         "Event_Code_Linker_Clean_Name": {
             "type": "string"
         },
-        "event_code_linker_invite_sponsor": {
+        "event_code_linker_invite_partner": {
             "type": "relation",
             "relation": "oneToOne",
             "target": "api::sponsor.sponsor"

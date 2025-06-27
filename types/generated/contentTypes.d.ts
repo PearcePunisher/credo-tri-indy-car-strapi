@@ -830,15 +830,15 @@ export interface ApiDriverDriver extends Struct.CollectionTypeSchema {
     >;
     driver_lname: Schema.Attribute.String;
     driver_merch_link: Schema.Attribute.String;
+    driver_partners: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::sponsor.sponsor'
+    >;
     driver_record: Schema.Attribute.Component<'shared.driver-record', true>;
     driver_residence: Schema.Attribute.String;
     driver_social_medias: Schema.Attribute.Component<
       'shared.driver-socials',
       true
-    >;
-    driver_sponsors: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::sponsor.sponsor'
     >;
     driver_website_link: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
@@ -876,7 +876,7 @@ export interface ApiEventCodeLinkerEventCodeLinker
       Schema.Attribute.Private;
     event: Schema.Attribute.Relation<'oneToOne', 'api::event.event'>;
     Event_Code_Linker_Clean_Name: Schema.Attribute.String;
-    event_code_linker_invite_sponsor: Schema.Attribute.Relation<
+    event_code_linker_invite_partner: Schema.Attribute.Relation<
       'oneToOne',
       'api::sponsor.sponsor'
     >;
@@ -978,7 +978,7 @@ export interface ApiExperienceExperience extends Struct.CollectionTypeSchema {
     experience_image: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
     >;
-    experience_sponsors: Schema.Attribute.Relation<
+    experience_partners: Schema.Attribute.Relation<
       'oneToMany',
       'api::sponsor.sponsor'
     >;
@@ -1075,11 +1075,11 @@ export interface ApiRestaurantRestaurant extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    article: Schema.Attribute.Relation<'oneToOne', 'api::article.article'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     Description: Schema.Attribute.Blocks;
+    dining_option_end_date_time: Schema.Attribute.DateTime;
     dining_option_event: Schema.Attribute.Relation<
       'oneToOne',
       'api::event.event'
@@ -1088,6 +1088,7 @@ export interface ApiRestaurantRestaurant extends Struct.CollectionTypeSchema {
       'images' | 'files' | 'videos' | 'audios'
     >;
     dining_option_locaiton: Schema.Attribute.String;
+    dining_option_start_date_time: Schema.Attribute.DateTime;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -1108,7 +1109,7 @@ export interface ApiSponsorSponsor extends Struct.CollectionTypeSchema {
   collectionName: 'sponsors';
   info: {
     description: '';
-    displayName: 'Sponsor';
+    displayName: 'Partner';
     pluralName: 'sponsors';
     singularName: 'sponsor';
   };
@@ -1125,19 +1126,19 @@ export interface ApiSponsorSponsor extends Struct.CollectionTypeSchema {
       'api::sponsor.sponsor'
     > &
       Schema.Attribute.Private;
+    partner_colors: Schema.Attribute.Component<'shared.sponsor-colors', false>;
+    partner_description: Schema.Attribute.Text;
+    partner_hero_image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    partner_id: Schema.Attribute.UID;
+    partner_link: Schema.Attribute.String;
+    partner_logo: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    partner_name: Schema.Attribute.String;
+    partner_slogan: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
-    sponsor_colors: Schema.Attribute.Component<'shared.sponsor-colors', false>;
-    sponsor_description: Schema.Attribute.Text;
-    sponsor_hero_image: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios'
-    >;
-    sponsor_id: Schema.Attribute.UID;
-    sponsor_link: Schema.Attribute.String;
-    sponsor_logo: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios'
-    >;
-    sponsor_name: Schema.Attribute.String;
-    sponsor_slogan: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1179,8 +1180,8 @@ export interface ApiTeamDetailTeamDetail extends Struct.CollectionTypeSchema {
     team_logos: Schema.Attribute.Component<'shared.team-logos', false>;
     team_merch_link: Schema.Attribute.String;
     team_name: Schema.Attribute.String;
+    team_partners: Schema.Attribute.Component<'shared.team-sponsor', false>;
     team_socials: Schema.Attribute.Component<'shared.driver-socials', true>;
-    team_sponsors: Schema.Attribute.Component<'shared.team-sponsor', false>;
     team_website_link: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1850,13 +1851,13 @@ export interface PluginUsersPermissionsUser
     user_first_name: Schema.Attribute.String;
     user_image: Schema.Attribute.Media<'images' | 'files'>;
     user_last_name: Schema.Attribute.String;
+    user_partner_inviter: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::sponsor.sponsor'
+    >;
     user_phone_number: Schema.Attribute.String;
     user_qr_code: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
-    >;
-    user_sponsor_inviter: Schema.Attribute.Relation<
-      'oneToOne',
-      'api::sponsor.sponsor'
     >;
     username: Schema.Attribute.String &
       Schema.Attribute.Required &

@@ -20,7 +20,7 @@
         "team_descriptions": {
             "type": "richtext"
         },
-        "team_sponsors": {
+        "team_partners": {
             "displayName": "team_sponsor",
             "type": "component",
             "repeatable": false,

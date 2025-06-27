@@ -43,7 +43,7 @@
         "experience_end_date_time": {
             "type": "datetime"
         },
-        "experience_sponsors": {
+        "experience_partners": {
             "type": "relation",
             "relation": "oneToMany",
             "target": "api::sponsor.sponsor"

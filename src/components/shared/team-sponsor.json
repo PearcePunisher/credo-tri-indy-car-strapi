@@ -6,7 +6,7 @@
   },
   "options": {},
   "attributes": {
-    "sponsors": {
+    "partners": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::sponsor.sponsor"
