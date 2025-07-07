@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "event_schedules",
+  "info": {
+    "singularName": "event-schedule",
+    "pluralName": "event-schedules",
+    "displayName": "event_schedule",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "parent_event": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::event.event",
+      "inversedBy": "event_schedules"
+    },
+    "event_schedule_human_title": {
+      "type": "string"
+    },
+    "schedule_experiences": {
+      "displayName": "schedule_experiences",
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.schedule-experiences"
+    }
+  }
+}

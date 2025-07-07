@@ -897,6 +897,41 @@ export interface ApiEventCodeLinkerEventCodeLinker
   };
 }
 
+export interface ApiEventScheduleEventSchedule
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'event_schedules';
+  info: {
+    description: '';
+    displayName: 'event_schedule';
+    pluralName: 'event-schedules';
+    singularName: 'event-schedule';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    event_schedule_human_title: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::event-schedule.event-schedule'
+    > &
+      Schema.Attribute.Private;
+    parent_event: Schema.Attribute.Relation<'manyToOne', 'api::event.event'>;
+    publishedAt: Schema.Attribute.DateTime;
+    schedule_experiences: Schema.Attribute.Component<
+      'shared.schedule-experiences',
+      true
+    >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiEventEvent extends Struct.CollectionTypeSchema {
   collectionName: 'events';
   info: {
@@ -939,6 +974,10 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
     >;
     event_schedule: Schema.Attribute.Component<'shared.event-schedule', true>;
     event_schedule_description: Schema.Attribute.Blocks;
+    event_schedules: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::event-schedule.event-schedule'
+    >;
     event_start_date_time: Schema.Attribute.DateTime;
     event_venue: Schema.Attribute.Relation<'oneToOne', 'api::venue.venue'>;
     event_website_link: Schema.Attribute.String;
@@ -1889,6 +1928,7 @@ declare module '@strapi/strapi' {
       'api::category.category': ApiCategoryCategory;
       'api::driver.driver': ApiDriverDriver;
       'api::event-code-linker.event-code-linker': ApiEventCodeLinkerEventCodeLinker;
+      'api::event-schedule.event-schedule': ApiEventScheduleEventSchedule;
       'api::event.event': ApiEventEvent;
       'api::experience.experience': ApiExperienceExperience;
       'api::f-a-q.f-a-q': ApiFAQFAQ;

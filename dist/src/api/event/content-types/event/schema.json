@@ -97,6 +97,12 @@
             "type": "component",
             "repeatable": true,
             "component": "shared.event-race-details"
+        },
+        "event_schedules": {
+            "type": "relation",
+            "relation": "oneToMany",
+            "target": "api::event-schedule.event-schedule",
+            "mappedBy": "parent_event"
         }
     }
 }

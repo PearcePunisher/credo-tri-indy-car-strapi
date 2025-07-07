@@ -267,6 +267,20 @@ export interface SharedRichText extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedScheduleExperiences extends Struct.ComponentSchema {
+  collectionName: 'components_shared_schedule_experiences';
+  info: {
+    displayName: 'schedule_experiences';
+    icon: 'bulletList';
+  };
+  attributes: {
+    schedule_experience: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::experience.experience'
+    >;
+  };
+}
+
 export interface SharedSeo extends Struct.ComponentSchema {
   collectionName: 'components_shared_seos';
   info: {
@@ -472,6 +486,7 @@ declare module '@strapi/strapi' {
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;
+      'shared.schedule-experiences': SharedScheduleExperiences;
       'shared.seo': SharedSeo;
       'shared.slider': SharedSlider;
       'shared.sponsor-colors': SharedSponsorColors;
