@@ -1863,6 +1863,7 @@ export interface PluginUsersPermissionsUser
       Schema.Attribute.SetMinMaxLength<{
         minLength: 6;
       }>;
+    event_code: Schema.Attribute.String;
     event_code_linker: Schema.Attribute.Relation<
       'oneToOne',
       'api::event-code-linker.event-code-linker'

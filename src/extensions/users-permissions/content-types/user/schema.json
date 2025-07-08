@@ -129,6 +129,9 @@
       "type": "component",
       "repeatable": false,
       "component": "shared.conversion-linker-test"
+    },
+    "event_code": {
+      "type": "string"
     }
   }
 }
