@@ -884,6 +884,10 @@ export interface ApiEventCodeLinkerEventCodeLinker
       'shared.event-code-linker-valid-codes',
       true
     >;
+    event_schedule: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::event-schedule.event-schedule'
+    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -913,6 +917,10 @@ export interface ApiEventScheduleEventSchedule
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    event_code_linker: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::event-code-linker.event-code-linker'
+    >;
     event_schedule_human_title: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -1858,6 +1866,10 @@ export interface PluginUsersPermissionsUser
     event_code_linker: Schema.Attribute.Relation<
       'oneToOne',
       'api::event-code-linker.event-code-linker'
+    >;
+    event_code_manager: Schema.Attribute.Component<
+      'shared.conversion-linker-test',
+      false
     >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<

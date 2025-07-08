@@ -123,6 +123,12 @@
     },
     "user_phone_number": {
       "type": "string"
+    },
+    "event_code_manager": {
+      "displayName": "conversion_linker_test",
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.conversion-linker-test"
     }
   }
 }

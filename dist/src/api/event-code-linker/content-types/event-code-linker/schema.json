@@ -29,6 +29,12 @@
             "type": "relation",
             "relation": "oneToOne",
             "target": "api::sponsor.sponsor"
+        },
+        "event_schedule": {
+            "type": "relation",
+            "relation": "oneToOne",
+            "target": "api::event-schedule.event-schedule",
+            "inversedBy": "event_code_linker"
         }
     }
 }

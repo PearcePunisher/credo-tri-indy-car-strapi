@@ -61,6 +61,20 @@ export interface SharedCarOtherSpecs extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedConversionLinkerTest extends Struct.ComponentSchema {
+  collectionName: 'components_shared_conversion_linker_tests';
+  info: {
+    displayName: 'conversion_linker_test';
+    icon: 'bulletList';
+  };
+  attributes: {
+    event_code_linker: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::event-code-linker.event-code-linker'
+    >;
+  };
+}
+
 export interface SharedDriverCareerStats extends Struct.ComponentSchema {
   collectionName: 'components_shared_driver_career_stats';
   info: {
@@ -473,6 +487,7 @@ declare module '@strapi/strapi' {
       'shared.car-images': SharedCarImages;
       'shared.car-materials': SharedCarMaterials;
       'shared.car-other-specs': SharedCarOtherSpecs;
+      'shared.conversion-linker-test': SharedConversionLinkerTest;
       'shared.driver-career-stats': SharedDriverCareerStats;
       'shared.driver-current-season-stats': SharedDriverCurrentSeasonStats;
       'shared.driver-record': SharedDriverRecord;
