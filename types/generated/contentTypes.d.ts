@@ -926,6 +926,10 @@ export interface ApiEventScheduleEventSchedule
       'api::event-code-linker.event-code-linker'
     >;
     event_schedule_human_title: Schema.Attribute.String;
+    experiences_on_schedule: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::experience.experience'
+    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
