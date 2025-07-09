@@ -1,0 +1,1 @@
+import{i as u,bO as f}from"./strapi-BprwT5Gz.js";var i=u;function t(h,e){return function(a,s){if(a==null)return a;if(!i(a))return h(a,s);for(var b=a.length,r=e?b:-1,n=Object(a);(e?r--:++r<b)&&s(n[r],r,n)!==!1;);return a}}var v=t,E=f,_=v,O=_(E),w=O;export{w as _};
