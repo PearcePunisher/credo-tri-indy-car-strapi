@@ -10,6 +10,7 @@
     "options": {
         "draftAndPublish": true
     },
+    "pluginOptions": {},
     "attributes": {
         "parent_event": {
             "type": "relation",
@@ -21,16 +22,20 @@
             "type": "string"
         },
         "schedule_experiences": {
-            "displayName": "schedule_experiences",
             "type": "component",
-            "repeatable": true,
-            "component": "shared.schedule-experiences"
+            "component": "shared.schedule-experiences",
+            "repeatable": true
         },
         "event_code_linker": {
             "type": "relation",
             "relation": "oneToOne",
             "target": "api::event-code-linker.event-code-linker",
             "mappedBy": "event_schedule"
+        },
+        "experiences_on_schedule": {
+            "type": "relation",
+            "relation": "oneToMany",
+            "target": "api::experience.experience"
         }
     }
 }
