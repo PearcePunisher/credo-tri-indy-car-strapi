@@ -902,6 +902,7 @@ export interface ApiEventCodeLinkerEventCodeLinker
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    USER_IS_STAFF: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
   };
 }
 

@@ -10,6 +10,7 @@
   "options": {
     "draftAndPublish": true
   },
+  "pluginOptions": {},
   "attributes": {
     "event": {
       "type": "relation",
@@ -17,10 +18,9 @@
       "target": "api::event.event"
     },
     "event_code_linker_valid_codes": {
-      "displayName": "event_code_linker_valid_codes",
       "type": "component",
-      "repeatable": true,
-      "component": "shared.event-code-linker-valid-codes"
+      "component": "shared.event-code-linker-valid-codes",
+      "repeatable": true
     },
     "Event_Code_Linker_Clean_Name": {
       "type": "string"
@@ -35,6 +35,10 @@
       "relation": "oneToOne",
       "target": "api::event-schedule.event-schedule",
       "inversedBy": "event_code_linker"
+    },
+    "USER_IS_STAFF": {
+      "type": "boolean",
+      "default": false
     }
   }
 }
