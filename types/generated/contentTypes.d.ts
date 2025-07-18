@@ -402,78 +402,6 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
   };
 }
 
-export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
-  collectionName: 'articles';
-  info: {
-    description: 'Create your blog content';
-    displayName: 'Article';
-    pluralName: 'articles';
-    singularName: 'article';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    author: Schema.Attribute.Relation<'manyToOne', 'api::author.author'>;
-    blocks: Schema.Attribute.DynamicZone<
-      ['shared.media', 'shared.quote', 'shared.rich-text', 'shared.slider']
-    >;
-    category: Schema.Attribute.Relation<'manyToOne', 'api::category.category'>;
-    cover: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    description: Schema.Attribute.Text &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 80;
-      }>;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::article.article'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    slug: Schema.Attribute.UID<'title'>;
-    title: Schema.Attribute.String;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
-  collectionName: 'authors';
-  info: {
-    description: 'Create authors for your content';
-    displayName: 'Author';
-    pluralName: 'authors';
-    singularName: 'author';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    articles: Schema.Attribute.Relation<'oneToMany', 'api::article.article'>;
-    avatar: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    email: Schema.Attribute.String;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::author.author'
-    > &
-      Schema.Attribute.Private;
-    name: Schema.Attribute.String;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiCarCar extends Struct.CollectionTypeSchema {
   collectionName: 'cars';
   info: {
@@ -507,38 +435,6 @@ export interface ApiCarCar extends Struct.CollectionTypeSchema {
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::car.car'> &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
-  collectionName: 'categories';
-  info: {
-    description: 'Organize your content into categories';
-    displayName: 'Category';
-    pluralName: 'categories';
-    singularName: 'category';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    articles: Schema.Attribute.Relation<'oneToMany', 'api::article.article'>;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    description: Schema.Attribute.Text;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::category.category'
-    > &
-      Schema.Attribute.Private;
-    name: Schema.Attribute.String;
-    publishedAt: Schema.Attribute.DateTime;
-    slug: Schema.Attribute.UID;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -867,7 +763,7 @@ export interface ApiEventCodeLinkerEventCodeLinker
   collectionName: 'event_code_linkers';
   info: {
     description: '';
-    displayName: 'event_code_linker';
+    displayName: 'Event Code Linker';
     pluralName: 'event-code-linkers';
     singularName: 'event-code-linker';
   };
@@ -911,7 +807,7 @@ export interface ApiEventScheduleEventSchedule
   collectionName: 'event_schedules';
   info: {
     description: '';
-    displayName: 'event_schedule';
+    displayName: 'Event Schedule';
     pluralName: 'event-schedules';
     singularName: 'event-schedule';
   };
@@ -1087,6 +983,31 @@ export interface ApiFAQFAQ extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiFaqFaq extends Struct.CollectionTypeSchema {
+  collectionName: 'faqs';
+  info: {
+    displayName: 'FAQ';
+    pluralName: 'faqs';
+    singularName: 'faq';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    FAQs: Schema.Attribute.Component<'shared.faq', true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::faq.faq'> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   collectionName: 'globals';
   info: {
@@ -1249,7 +1170,7 @@ export interface ApiUsersGuestUsersGuest extends Struct.CollectionTypeSchema {
   collectionName: 'users_guests';
   info: {
     description: '';
-    displayName: 'users_guest';
+    displayName: 'Guest Users';
     pluralName: 'users-guests';
     singularName: 'users-guest';
   };
@@ -1288,7 +1209,7 @@ export interface ApiVenueDirectionVenueDirection
   collectionName: 'venue_directions';
   info: {
     description: '';
-    displayName: 'Venue_Direction';
+    displayName: 'Venue Directions';
     pluralName: 'venue-directions';
     singularName: 'venue-direction';
   };
@@ -1323,7 +1244,7 @@ export interface ApiVenueLocationVenueLocation
   collectionName: 'venue_locations';
   info: {
     description: '';
-    displayName: 'venue_location';
+    displayName: 'Venue Location';
     pluralName: 'venue-locations';
     singularName: 'venue-location';
   };
@@ -1873,6 +1794,7 @@ export interface PluginUsersPermissionsUser
         minLength: 6;
       }>;
     event_code: Schema.Attribute.String;
+    event_code_document_id: Schema.Attribute.String;
     event_code_linker: Schema.Attribute.Relation<
       'oneToOne',
       'api::event-code-linker.event-code-linker'
@@ -1881,6 +1803,7 @@ export interface PluginUsersPermissionsUser
       'shared.conversion-linker-test',
       false
     >;
+    event_schedule_document_id: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -1911,6 +1834,7 @@ export interface PluginUsersPermissionsUser
     >;
     user_first_name: Schema.Attribute.String;
     user_image: Schema.Attribute.Media<'images' | 'files'>;
+    USER_IS_STAFF: Schema.Attribute.Boolean;
     user_last_name: Schema.Attribute.String;
     user_partner_inviter: Schema.Attribute.Relation<
       'oneToOne',
@@ -1944,16 +1868,14 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::about.about': ApiAboutAbout;
-      'api::article.article': ApiArticleArticle;
-      'api::author.author': ApiAuthorAuthor;
       'api::car.car': ApiCarCar;
-      'api::category.category': ApiCategoryCategory;
       'api::driver.driver': ApiDriverDriver;
       'api::event-code-linker.event-code-linker': ApiEventCodeLinkerEventCodeLinker;
       'api::event-schedule.event-schedule': ApiEventScheduleEventSchedule;
       'api::event.event': ApiEventEvent;
       'api::experience.experience': ApiExperienceExperience;
       'api::f-a-q.f-a-q': ApiFAQFAQ;
+      'api::faq.faq': ApiFaqFaq;
       'api::global.global': ApiGlobalGlobal;
       'api::restaurant.restaurant': ApiRestaurantRestaurant;
       'api::sponsor.sponsor': ApiSponsorSponsor;

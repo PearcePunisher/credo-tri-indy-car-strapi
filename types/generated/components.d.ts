@@ -246,6 +246,18 @@ export interface SharedEventSchedule extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedFaq extends Struct.ComponentSchema {
+  collectionName: 'components_shared_faqs';
+  info: {
+    displayName: 'FAQ';
+    icon: 'question';
+  };
+  attributes: {
+    Answer: Schema.Attribute.Blocks;
+    Question: Schema.Attribute.String;
+  };
+}
+
 export interface SharedMedia extends Struct.ComponentSchema {
   collectionName: 'components_shared_media';
   info: {
@@ -498,6 +510,7 @@ declare module '@strapi/strapi' {
       'shared.event-fact-file': SharedEventFactFile;
       'shared.event-race-details': SharedEventRaceDetails;
       'shared.event-schedule': SharedEventSchedule;
+      'shared.faq': SharedFaq;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;

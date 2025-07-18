@@ -4,7 +4,7 @@
   "info": {
     "singularName": "event-code-linker",
     "pluralName": "event-code-linkers",
-    "displayName": "event_code_linker",
+    "displayName": "Event Code Linker",
     "description": ""
   },
   "options": {

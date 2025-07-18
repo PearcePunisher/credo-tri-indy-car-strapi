@@ -4,6 +4,7 @@
  */
 import strapiCloud from "@strapi/plugin-cloud/strapi-admin";
 import colorPicker from "@strapi/plugin-color-picker/strapi-admin";
+import documentation from "@strapi/plugin-documentation/strapi-admin";
 import usersPermissions from "@strapi/plugin-users-permissions/strapi-admin";
 import schemaVisualizer from "strapi-plugin-schema-visualizer/strapi-admin";
 import { renderAdmin } from "@strapi/strapi/admin";
@@ -12,6 +13,7 @@ renderAdmin(document.getElementById("strapi"), {
   plugins: {
     "strapi-cloud": strapiCloud,
     "color-picker": colorPicker,
+    documentation: documentation,
     "users-permissions": usersPermissions,
     "schema-visualizer": schemaVisualizer,
   },

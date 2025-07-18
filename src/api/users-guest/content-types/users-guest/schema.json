@@ -4,12 +4,13 @@
   "info": {
     "singularName": "users-guest",
     "pluralName": "users-guests",
-    "displayName": "users_guest",
+    "displayName": "Guest Users",
     "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
+  "pluginOptions": {},
   "attributes": {
     "users_guest_id": {
       "type": "uid"

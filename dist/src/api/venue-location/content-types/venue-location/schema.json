@@ -4,12 +4,13 @@
     "info": {
         "singularName": "venue-location",
         "pluralName": "venue-locations",
-        "displayName": "venue_location",
+        "displayName": "Venue Location",
         "description": ""
     },
     "options": {
         "draftAndPublish": true
     },
+    "pluginOptions": {},
     "attributes": {
         "venue_location_name": {
             "type": "string"
@@ -22,8 +23,8 @@
         },
         "venue_location_available_date_times": {
             "type": "component",
-            "repeatable": true,
-            "component": "shared.venue-location-date-times"
+            "component": "shared.venue-location-date-times",
+            "repeatable": true
         },
         "venue_location_venue": {
             "type": "relation",

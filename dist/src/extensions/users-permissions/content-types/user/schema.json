@@ -11,6 +11,7 @@
     "options": {
         "draftAndPublish": false
     },
+    "pluginOptions": {},
     "attributes": {
         "username": {
             "type": "string",
@@ -125,13 +126,21 @@
             "type": "string"
         },
         "event_code_manager": {
-            "displayName": "conversion_linker_test",
             "type": "component",
-            "repeatable": false,
-            "component": "shared.conversion-linker-test"
+            "component": "shared.conversion-linker-test",
+            "repeatable": false
         },
         "event_code": {
             "type": "string"
+        },
+        "event_code_document_id": {
+            "type": "string"
+        },
+        "event_schedule_document_id": {
+            "type": "string"
+        },
+        "USER_IS_STAFF": {
+            "type": "boolean"
         }
     }
 }

@@ -4,7 +4,7 @@
     "info": {
         "singularName": "event-schedule",
         "pluralName": "event-schedules",
-        "displayName": "event_schedule",
+        "displayName": "Event Schedule",
         "description": ""
     },
     "options": {
