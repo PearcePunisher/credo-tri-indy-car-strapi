@@ -14,7 +14,7 @@
             "name": "Apache 2.0",
             "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
         },
-        "x-generation-date": "2025-07-18T20:05:25.711Z"
+        "x-generation-date": "2025-07-23T17:20:45.894Z"
     },
     "x-strapi-config": {
         "plugins": [
@@ -15813,6 +15813,9 @@
                                         }
                                     }
                                 },
+                                "auto_notification_enable": {
+                                    "type": "boolean"
+                                },
                                 "createdAt": {
                                     "type": "string",
                                     "format": "date-time"
@@ -18687,6 +18690,9 @@
                                                 }
                                             }
                                         },
+                                        "auto_notification_enable": {
+                                            "type": "boolean"
+                                        },
                                         "createdAt": {
                                             "type": "string",
                                             "format": "date-time"
@@ -21311,6 +21317,9 @@
                                                 }
                                             }
                                         },
+                                        "auto_notification_enable": {
+                                            "type": "boolean"
+                                        },
                                         "createdAt": {
                                             "type": "string",
                                             "format": "date-time"
@@ -21930,6 +21939,9 @@
                                     }
                                 ],
                                 "example": "string or id"
+                            },
+                            "auto_notification_enable": {
+                                "type": "boolean"
                             },
                             "locale": {
                                 "type": "string"
@@ -24092,6 +24104,9 @@
                                                 }
                                             }
                                         },
+                                        "auto_notification_enable": {
+                                            "type": "boolean"
+                                        },
                                         "createdAt": {
                                             "type": "string",
                                             "format": "date-time"
@@ -24571,6 +24586,9 @@
                                 "type": "string"
                             }
                         }
+                    },
+                    "auto_notification_enable": {
+                        "type": "boolean"
                     },
                     "createdAt": {
                         "type": "string",
@@ -28747,6 +28765,9 @@
                                                     "type": "string"
                                                 }
                                             }
+                                        },
+                                        "auto_notification_enable": {
+                                            "type": "boolean"
                                         },
                                         "createdAt": {
                                             "type": "string",
@@ -35072,6 +35093,9 @@
                                                                 "type": "string"
                                                             }
                                                         }
+                                                    },
+                                                    "auto_notification_enable": {
+                                                        "type": "boolean"
                                                     },
                                                     "createdAt": {
                                                         "type": "string",
