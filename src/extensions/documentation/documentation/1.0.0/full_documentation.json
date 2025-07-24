@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2025-07-23T17:20:45.894Z"
+    "x-generation-date": "2025-07-24T19:07:01.047Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -12308,6 +12308,12 @@
                 "type": "string",
                 "format": "date"
               },
+              "team_staff_member": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/SharedTeamOwnersComponent"
+                }
+              },
               "createdAt": {
                 "type": "string",
                 "format": "date-time"
@@ -13059,6 +13065,147 @@
               }
             }
           }
+        }
+      },
+      "SharedTeamOwnersComponent": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "Staff_name": {
+            "type": "string"
+          },
+          "Staff_Image": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "number"
+              },
+              "documentId": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "alternativeText": {
+                "type": "string"
+              },
+              "caption": {
+                "type": "string"
+              },
+              "width": {
+                "type": "integer"
+              },
+              "height": {
+                "type": "integer"
+              },
+              "formats": {},
+              "hash": {
+                "type": "string"
+              },
+              "ext": {
+                "type": "string"
+              },
+              "mime": {
+                "type": "string"
+              },
+              "size": {
+                "type": "number",
+                "format": "float"
+              },
+              "url": {
+                "type": "string"
+              },
+              "previewUrl": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "provider_metadata": {},
+              "related": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "number"
+                    },
+                    "documentId": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "folder": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "number"
+                  },
+                  "documentId": {
+                    "type": "string"
+                  }
+                }
+              },
+              "folderPath": {
+                "type": "string"
+              },
+              "createdAt": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "updatedAt": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "publishedAt": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "createdBy": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "number"
+                  },
+                  "documentId": {
+                    "type": "string"
+                  }
+                }
+              },
+              "updatedBy": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "number"
+                  },
+                  "documentId": {
+                    "type": "string"
+                  }
+                }
+              },
+              "locale": {
+                "type": "string"
+              },
+              "localizations": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "number"
+                    },
+                    "documentId": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "Staff_Description": {}
         }
       },
       "EventRequest": {
@@ -14867,6 +15014,12 @@
                     "team_established_date": {
                       "type": "string",
                       "format": "date"
+                    },
+                    "team_staff_member": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/SharedTeamOwnersComponent"
+                      }
                     },
                     "createdAt": {
                       "type": "string",
@@ -18350,6 +18503,12 @@
                           "type": "string",
                           "format": "date"
                         },
+                        "team_staff_member": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/SharedTeamOwnersComponent"
+                          }
+                        },
                         "createdAt": {
                           "type": "string",
                           "format": "date-time"
@@ -20976,6 +21135,12 @@
                         "team_established_date": {
                           "type": "string",
                           "format": "date"
+                        },
+                        "team_staff_member": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/SharedTeamOwnersComponent"
+                          }
                         },
                         "createdAt": {
                           "type": "string",
@@ -23763,6 +23928,12 @@
                         "team_established_date": {
                           "type": "string",
                           "format": "date"
+                        },
+                        "team_staff_member": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/SharedTeamOwnersComponent"
+                          }
                         },
                         "createdAt": {
                           "type": "string",
@@ -28426,6 +28597,12 @@
                           "type": "string",
                           "format": "date"
                         },
+                        "team_staff_member": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/SharedTeamOwnersComponent"
+                          }
+                        },
                         "createdAt": {
                           "type": "string",
                           "format": "date-time"
@@ -30943,6 +31120,12 @@
                 "type": "string",
                 "format": "date"
               },
+              "team_staff_member": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/SharedTeamOwnersComponent"
+                }
+              },
               "locale": {
                 "type": "string"
               },
@@ -31613,6 +31796,12 @@
                       "type": "string",
                       "format": "date"
                     },
+                    "team_staff_member": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/SharedTeamOwnersComponent"
+                      }
+                    },
                     "createdAt": {
                       "type": "string",
                       "format": "date-time"
@@ -31786,6 +31975,12 @@
           "team_established_date": {
             "type": "string",
             "format": "date"
+          },
+          "team_staff_member": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SharedTeamOwnersComponent"
+            }
           },
           "createdAt": {
             "type": "string",
@@ -34753,6 +34948,12 @@
                               "team_established_date": {
                                 "type": "string",
                                 "format": "date"
+                              },
+                              "team_staff_member": {
+                                "type": "array",
+                                "items": {
+                                  "$ref": "#/components/schemas/SharedTeamOwnersComponent"
+                                }
                               },
                               "createdAt": {
                                 "type": "string",

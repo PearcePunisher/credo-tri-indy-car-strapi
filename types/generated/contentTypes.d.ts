@@ -1161,6 +1161,7 @@ export interface ApiTeamDetailTeamDetail extends Struct.CollectionTypeSchema {
     team_name: Schema.Attribute.String;
     team_partners: Schema.Attribute.Component<'shared.team-sponsor', false>;
     team_socials: Schema.Attribute.Component<'shared.driver-socials', true>;
+    team_staff_member: Schema.Attribute.Component<'shared.team-owners', true>;
     team_website_link: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

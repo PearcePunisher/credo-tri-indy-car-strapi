@@ -403,6 +403,21 @@ export interface SharedTeamLogos extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedTeamOwners extends Struct.ComponentSchema {
+  collectionName: 'components_shared_team_owners';
+  info: {
+    displayName: 'team_owners';
+    icon: 'apps';
+  };
+  attributes: {
+    Staff_Description: Schema.Attribute.Blocks;
+    Staff_Image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    Staff_name: Schema.Attribute.String;
+  };
+}
+
 export interface SharedTeamSocials extends Struct.ComponentSchema {
   collectionName: 'components_shared_team_socials';
   info: {
@@ -521,6 +536,7 @@ declare module '@strapi/strapi' {
       'shared.team-colors': SharedTeamColors;
       'shared.team-engine-manufacturer': SharedTeamEngineManufacturer;
       'shared.team-logos': SharedTeamLogos;
+      'shared.team-owners': SharedTeamOwners;
       'shared.team-socials': SharedTeamSocials;
       'shared.team-sponsor': SharedTeamSponsor;
       'shared.user-children': SharedUserChildren;

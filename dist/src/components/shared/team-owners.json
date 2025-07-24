@@ -1,0 +1,27 @@
+{
+    "collectionName": "components_shared_team_owners",
+    "info": {
+        "displayName": "team_owners",
+        "icon": "apps"
+    },
+    "options": {},
+    "attributes": {
+        "Staff_name": {
+            "type": "string"
+        },
+        "Staff_Image": {
+            "type": "media",
+            "multiple": false,
+            "allowedTypes": [
+                "images",
+                "files",
+                "videos",
+                "audios"
+            ]
+        },
+        "Staff_Description": {
+            "type": "blocks"
+        }
+    },
+    "config": {}
+}

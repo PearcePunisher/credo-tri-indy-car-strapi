@@ -10,6 +10,7 @@
   "options": {
     "draftAndPublish": true
   },
+  "pluginOptions": {},
   "attributes": {
     "team_id": {
       "type": "uid"
@@ -21,22 +22,19 @@
       "type": "richtext"
     },
     "team_partners": {
-      "displayName": "team_sponsor",
       "type": "component",
-      "repeatable": false,
-      "component": "shared.team-sponsor"
+      "component": "shared.team-sponsor",
+      "repeatable": false
     },
     "team_logos": {
-      "displayName": "team_logos",
       "type": "component",
-      "repeatable": false,
-      "component": "shared.team-logos"
+      "component": "shared.team-logos",
+      "repeatable": false
     },
     "team_colors": {
-      "displayName": "team_colors",
       "type": "component",
-      "repeatable": false,
-      "component": "shared.team-colors"
+      "component": "shared.team-colors",
+      "repeatable": false
     },
     "drivers": {
       "type": "relation",
@@ -49,23 +47,27 @@
     },
     "team_socials": {
       "type": "component",
-      "repeatable": true,
-      "component": "shared.driver-socials"
+      "component": "shared.driver-socials",
+      "repeatable": true
     },
     "team_merch_link": {
       "type": "string"
     },
     "team_engine_manufacturer": {
-      "displayName": "team_engine_manufacturer",
       "type": "component",
-      "repeatable": true,
-      "component": "shared.team-engine-manufacturer"
+      "component": "shared.team-engine-manufacturer",
+      "repeatable": true
     },
     "team_headquarters": {
       "type": "string"
     },
     "team_established_date": {
       "type": "date"
+    },
+    "team_staff_member": {
+      "type": "component",
+      "component": "shared.team-owners",
+      "repeatable": true
     }
   }
 }
