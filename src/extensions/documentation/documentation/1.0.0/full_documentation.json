@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2025-07-25T00:30:28.349Z"
+    "x-generation-date": "2025-07-25T01:36:35.992Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -12308,7 +12308,7 @@
                 "type": "string",
                 "format": "date"
               },
-              "team_staff_member": {
+              "team_staff_members": {
                 "type": "array",
                 "items": {
                   "$ref": "#/components/schemas/SharedTeamOwnersComponent"
@@ -15015,7 +15015,7 @@
                       "type": "string",
                       "format": "date"
                     },
-                    "team_staff_member": {
+                    "team_staff_members": {
                       "type": "array",
                       "items": {
                         "$ref": "#/components/schemas/SharedTeamOwnersComponent"
@@ -18503,7 +18503,7 @@
                           "type": "string",
                           "format": "date"
                         },
-                        "team_staff_member": {
+                        "team_staff_members": {
                           "type": "array",
                           "items": {
                             "$ref": "#/components/schemas/SharedTeamOwnersComponent"
@@ -21136,7 +21136,7 @@
                           "type": "string",
                           "format": "date"
                         },
-                        "team_staff_member": {
+                        "team_staff_members": {
                           "type": "array",
                           "items": {
                             "$ref": "#/components/schemas/SharedTeamOwnersComponent"
@@ -23929,7 +23929,7 @@
                           "type": "string",
                           "format": "date"
                         },
-                        "team_staff_member": {
+                        "team_staff_members": {
                           "type": "array",
                           "items": {
                             "$ref": "#/components/schemas/SharedTeamOwnersComponent"
@@ -28597,7 +28597,7 @@
                           "type": "string",
                           "format": "date"
                         },
-                        "team_staff_member": {
+                        "team_staff_members": {
                           "type": "array",
                           "items": {
                             "$ref": "#/components/schemas/SharedTeamOwnersComponent"
@@ -31120,7 +31120,7 @@
                 "type": "string",
                 "format": "date"
               },
-              "team_staff_member": {
+              "team_staff_members": {
                 "type": "array",
                 "items": {
                   "$ref": "#/components/schemas/SharedTeamOwnersComponent"
@@ -31796,7 +31796,7 @@
                       "type": "string",
                       "format": "date"
                     },
-                    "team_staff_member": {
+                    "team_staff_members": {
                       "type": "array",
                       "items": {
                         "$ref": "#/components/schemas/SharedTeamOwnersComponent"
@@ -31976,7 +31976,7 @@
             "type": "string",
             "format": "date"
           },
-          "team_staff_member": {
+          "team_staff_members": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/SharedTeamOwnersComponent"
@@ -34949,7 +34949,7 @@
                                 "type": "string",
                                 "format": "date"
                               },
-                              "team_staff_member": {
+                              "team_staff_members": {
                                 "type": "array",
                                 "items": {
                                   "$ref": "#/components/schemas/SharedTeamOwnersComponent"

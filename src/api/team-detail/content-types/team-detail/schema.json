@@ -64,7 +64,7 @@
     "team_established_date": {
       "type": "date"
     },
-    "team_staff_member": {
+    "team_staff_members": {
       "type": "component",
       "component": "shared.team-owners",
       "repeatable": true
