@@ -1147,6 +1147,7 @@ export interface ApiTeamDetailTeamDetail extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    staff_members_team: Schema.Attribute.Component<'shared.team-owners', true>;
     team_colors: Schema.Attribute.Component<'shared.team-colors', false>;
     team_descriptions: Schema.Attribute.RichText;
     team_engine_manufacturer: Schema.Attribute.Component<
@@ -1161,7 +1162,6 @@ export interface ApiTeamDetailTeamDetail extends Struct.CollectionTypeSchema {
     team_name: Schema.Attribute.String;
     team_partners: Schema.Attribute.Component<'shared.team-sponsor', false>;
     team_socials: Schema.Attribute.Component<'shared.driver-socials', true>;
-    team_staff_members: Schema.Attribute.Component<'shared.team-owners', true>;
     team_website_link: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
