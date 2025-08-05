@@ -57,6 +57,13 @@
         "auto_notification_enable": {
             "type": "boolean",
             "default": false
+        },
+        "experience_date": {
+            "type": "date"
+        },
+        "experience_time": {
+            "type": "integer",
+            "max": 2400
         }
     }
 }

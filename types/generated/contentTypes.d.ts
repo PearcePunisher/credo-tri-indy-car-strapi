@@ -926,6 +926,7 @@ export interface ApiExperienceExperience extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    experience_date: Schema.Attribute.Date;
     experience_description: Schema.Attribute.Blocks;
     experience_end_date_time: Schema.Attribute.DateTime;
     experience_id: Schema.Attribute.UID;
@@ -937,6 +938,13 @@ export interface ApiExperienceExperience extends Struct.CollectionTypeSchema {
       'api::sponsor.sponsor'
     >;
     experience_start_date_time: Schema.Attribute.DateTime;
+    experience_time: Schema.Attribute.Integer &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 2400;
+        },
+        number
+      >;
     experience_title: Schema.Attribute.String;
     experience_venue_location: Schema.Attribute.Relation<
       'oneToOne',

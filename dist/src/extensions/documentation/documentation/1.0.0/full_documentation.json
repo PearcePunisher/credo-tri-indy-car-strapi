@@ -14,7 +14,7 @@
             "name": "Apache 2.0",
             "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
         },
-        "x-generation-date": "2025-07-25T02:42:43.350Z"
+        "x-generation-date": "2025-08-05T16:32:23.902Z"
     },
     "x-strapi-config": {
         "plugins": [
@@ -15969,6 +15969,13 @@
                                 "auto_notification_enable": {
                                     "type": "boolean"
                                 },
+                                "experience_date": {
+                                    "type": "string",
+                                    "format": "date"
+                                },
+                                "experience_time": {
+                                    "type": "integer"
+                                },
                                 "createdAt": {
                                     "type": "string",
                                     "format": "date-time"
@@ -18852,6 +18859,13 @@
                                         "auto_notification_enable": {
                                             "type": "boolean"
                                         },
+                                        "experience_date": {
+                                            "type": "string",
+                                            "format": "date"
+                                        },
+                                        "experience_time": {
+                                            "type": "integer"
+                                        },
                                         "createdAt": {
                                             "type": "string",
                                             "format": "date-time"
@@ -21485,6 +21499,13 @@
                                         "auto_notification_enable": {
                                             "type": "boolean"
                                         },
+                                        "experience_date": {
+                                            "type": "string",
+                                            "format": "date"
+                                        },
+                                        "experience_time": {
+                                            "type": "integer"
+                                        },
                                         "createdAt": {
                                             "type": "string",
                                             "format": "date-time"
@@ -22107,6 +22128,13 @@
                             },
                             "auto_notification_enable": {
                                 "type": "boolean"
+                            },
+                            "experience_date": {
+                                "type": "string",
+                                "format": "date"
+                            },
+                            "experience_time": {
+                                "type": "integer"
                             },
                             "locale": {
                                 "type": "string"
@@ -24278,6 +24306,13 @@
                                         "auto_notification_enable": {
                                             "type": "boolean"
                                         },
+                                        "experience_date": {
+                                            "type": "string",
+                                            "format": "date"
+                                        },
+                                        "experience_time": {
+                                            "type": "integer"
+                                        },
                                         "createdAt": {
                                             "type": "string",
                                             "format": "date-time"
@@ -24760,6 +24795,13 @@
                     },
                     "auto_notification_enable": {
                         "type": "boolean"
+                    },
+                    "experience_date": {
+                        "type": "string",
+                        "format": "date"
+                    },
+                    "experience_time": {
+                        "type": "integer"
                     },
                     "createdAt": {
                         "type": "string",
@@ -28945,6 +28987,13 @@
                                         },
                                         "auto_notification_enable": {
                                             "type": "boolean"
+                                        },
+                                        "experience_date": {
+                                            "type": "string",
+                                            "format": "date"
+                                        },
+                                        "experience_time": {
+                                            "type": "integer"
                                         },
                                         "createdAt": {
                                             "type": "string",
@@ -35297,6 +35346,13 @@
                                                     },
                                                     "auto_notification_enable": {
                                                         "type": "boolean"
+                                                    },
+                                                    "experience_date": {
+                                                        "type": "string",
+                                                        "format": "date"
+                                                    },
+                                                    "experience_time": {
+                                                        "type": "integer"
                                                     },
                                                     "createdAt": {
                                                         "type": "string",
