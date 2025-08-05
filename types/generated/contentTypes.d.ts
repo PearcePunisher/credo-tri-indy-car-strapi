@@ -929,6 +929,13 @@ export interface ApiExperienceExperience extends Struct.CollectionTypeSchema {
     experience_date: Schema.Attribute.Date;
     experience_description: Schema.Attribute.Blocks;
     experience_end_date_time: Schema.Attribute.DateTime;
+    experience_end_time: Schema.Attribute.Integer &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 2400;
+        },
+        number
+      >;
     experience_id: Schema.Attribute.UID;
     experience_image: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
@@ -938,7 +945,7 @@ export interface ApiExperienceExperience extends Struct.CollectionTypeSchema {
       'api::sponsor.sponsor'
     >;
     experience_start_date_time: Schema.Attribute.DateTime;
-    experience_time: Schema.Attribute.Integer &
+    experience_start_time: Schema.Attribute.Integer &
       Schema.Attribute.SetMinMax<
         {
           max: 2400;

@@ -61,7 +61,11 @@
     "experience_date": {
       "type": "date"
     },
-    "experience_time": {
+    "experience_start_time": {
+      "type": "integer",
+      "max": 2400
+    },
+    "experience_end_time": {
       "type": "integer",
       "max": 2400
     }

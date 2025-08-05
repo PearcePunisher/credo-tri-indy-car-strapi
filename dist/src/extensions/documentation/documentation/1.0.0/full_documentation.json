@@ -14,7 +14,7 @@
             "name": "Apache 2.0",
             "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
         },
-        "x-generation-date": "2025-08-05T16:32:23.902Z"
+        "x-generation-date": "2025-08-05T17:12:02.072Z"
     },
     "x-strapi-config": {
         "plugins": [
@@ -15973,7 +15973,10 @@
                                     "type": "string",
                                     "format": "date"
                                 },
-                                "experience_time": {
+                                "experience_start_time": {
+                                    "type": "integer"
+                                },
+                                "experience_end_time": {
                                     "type": "integer"
                                 },
                                 "createdAt": {
@@ -18863,7 +18866,10 @@
                                             "type": "string",
                                             "format": "date"
                                         },
-                                        "experience_time": {
+                                        "experience_start_time": {
+                                            "type": "integer"
+                                        },
+                                        "experience_end_time": {
                                             "type": "integer"
                                         },
                                         "createdAt": {
@@ -21503,7 +21509,10 @@
                                             "type": "string",
                                             "format": "date"
                                         },
-                                        "experience_time": {
+                                        "experience_start_time": {
+                                            "type": "integer"
+                                        },
+                                        "experience_end_time": {
                                             "type": "integer"
                                         },
                                         "createdAt": {
@@ -22133,7 +22142,10 @@
                                 "type": "string",
                                 "format": "date"
                             },
-                            "experience_time": {
+                            "experience_start_time": {
+                                "type": "integer"
+                            },
+                            "experience_end_time": {
                                 "type": "integer"
                             },
                             "locale": {
@@ -24310,7 +24322,10 @@
                                             "type": "string",
                                             "format": "date"
                                         },
-                                        "experience_time": {
+                                        "experience_start_time": {
+                                            "type": "integer"
+                                        },
+                                        "experience_end_time": {
                                             "type": "integer"
                                         },
                                         "createdAt": {
@@ -24800,7 +24815,10 @@
                         "type": "string",
                         "format": "date"
                     },
-                    "experience_time": {
+                    "experience_start_time": {
+                        "type": "integer"
+                    },
+                    "experience_end_time": {
                         "type": "integer"
                     },
                     "createdAt": {
@@ -28992,7 +29010,10 @@
                                             "type": "string",
                                             "format": "date"
                                         },
-                                        "experience_time": {
+                                        "experience_start_time": {
+                                            "type": "integer"
+                                        },
+                                        "experience_end_time": {
                                             "type": "integer"
                                         },
                                         "createdAt": {
@@ -35351,7 +35372,10 @@
                                                         "type": "string",
                                                         "format": "date"
                                                     },
-                                                    "experience_time": {
+                                                    "experience_start_time": {
+                                                        "type": "integer"
+                                                    },
+                                                    "experience_end_time": {
                                                         "type": "integer"
                                                     },
                                                     "createdAt": {
