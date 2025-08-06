@@ -1184,6 +1184,38 @@ export interface ApiTeamDetailTeamDetail extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiUpdateUpdate extends Struct.CollectionTypeSchema {
+  collectionName: 'updates';
+  info: {
+    displayName: 'Update';
+    pluralName: 'updates';
+    singularName: 'update';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::update.update'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    update_body_test: Schema.Attribute.Blocks;
+    update_id: Schema.Attribute.UID<'update_title'>;
+    update_images: Schema.Attribute.Media<'files' | 'images', true>;
+    update_title: Schema.Attribute.String;
+    update_video: Schema.Attribute.Media<'files' | 'videos'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiUsersGuestUsersGuest extends Struct.CollectionTypeSchema {
   collectionName: 'users_guests';
   info: {
@@ -1898,6 +1930,7 @@ declare module '@strapi/strapi' {
       'api::restaurant.restaurant': ApiRestaurantRestaurant;
       'api::sponsor.sponsor': ApiSponsorSponsor;
       'api::team-detail.team-detail': ApiTeamDetailTeamDetail;
+      'api::update.update': ApiUpdateUpdate;
       'api::users-guest.users-guest': ApiUsersGuestUsersGuest;
       'api::venue-direction.venue-direction': ApiVenueDirectionVenueDirection;
       'api::venue-location.venue-location': ApiVenueLocationVenueLocation;
