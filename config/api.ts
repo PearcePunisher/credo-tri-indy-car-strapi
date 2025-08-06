@@ -4,4 +4,8 @@ export default {
     maxLimit: 100,
     withCount: true,
   },
+  // Configure datetime handling to avoid timezone conversion
+  responses: {
+    privateAttributes: ['createdAt', 'updatedAt'],
+  },
 };

@@ -56,5 +56,11 @@ export default ({ env }) => {
       ...connections[client],
       acquireConnectionTimeout: env.int('DATABASE_CONNECTION_TIMEOUT', 60000),
     },
+    settings: {
+      // Ensure datetime fields are stored without timezone conversion
+      timezone: 'utc',
+      // Configure date serialization
+      dateStrings: true,
+    },
   };
 };
