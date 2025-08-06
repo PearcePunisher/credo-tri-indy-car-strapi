@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "updates",
+  "info": {
+    "singularName": "update",
+    "pluralName": "updates",
+    "displayName": "Update"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "update_title": {
+      "type": "string"
+    },
+    "update_id": {
+      "type": "uid",
+      "targetField": "update_title"
+    },
+    "update_video": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "files",
+        "videos"
+      ]
+    },
+    "update_images": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "files",
+        "images"
+      ]
+    },
+    "update_body_test": {
+      "type": "blocks"
+    }
+  }
+}

@@ -11,4 +11,6 @@ exports.default = [
     'strapi::session',
     'strapi::favicon',
     'strapi::public',
+    // Custom middleware to transform datetime fields
+    'global::datetime-transformer',
 ];
