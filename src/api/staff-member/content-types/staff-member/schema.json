@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "staff_members",
+  "info": {
+    "singularName": "staff-member",
+    "pluralName": "staff-members",
+    "displayName": "Staff Member"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "staff_member_f_name": {
+      "type": "string"
+    },
+    "staff_member_l_name": {
+      "type": "string"
+    },
+    "staff_member_email": {
+      "type": "email"
+    },
+    "staff_member_title": {
+      "type": "string"
+    },
+    "staff_member_image": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "staff_member_bio": {
+      "type": "richtext"
+    },
+    "team": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::team-detail.team-detail"
+    }
+  }
+}

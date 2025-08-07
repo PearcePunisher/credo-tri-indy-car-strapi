@@ -1139,6 +1139,43 @@ export interface ApiSponsorSponsor extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiStaffMemberStaffMember extends Struct.CollectionTypeSchema {
+  collectionName: 'staff_members';
+  info: {
+    displayName: 'Staff Member';
+    pluralName: 'staff-members';
+    singularName: 'staff-member';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::staff-member.staff-member'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    staff_member_bio: Schema.Attribute.RichText;
+    staff_member_email: Schema.Attribute.Email;
+    staff_member_f_name: Schema.Attribute.String;
+    staff_member_image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    staff_member_l_name: Schema.Attribute.String;
+    staff_member_title: Schema.Attribute.String;
+    team: Schema.Attribute.Relation<'oneToOne', 'api::team-detail.team-detail'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiTeamDetailTeamDetail extends Struct.CollectionTypeSchema {
   collectionName: 'team_details';
   info: {
@@ -1929,6 +1966,7 @@ declare module '@strapi/strapi' {
       'api::global.global': ApiGlobalGlobal;
       'api::restaurant.restaurant': ApiRestaurantRestaurant;
       'api::sponsor.sponsor': ApiSponsorSponsor;
+      'api::staff-member.staff-member': ApiStaffMemberStaffMember;
       'api::team-detail.team-detail': ApiTeamDetailTeamDetail;
       'api::update.update': ApiUpdateUpdate;
       'api::users-guest.users-guest': ApiUsersGuestUsersGuest;
