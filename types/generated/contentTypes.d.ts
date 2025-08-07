@@ -1168,7 +1168,7 @@ export interface ApiStaffMemberStaffMember extends Struct.CollectionTypeSchema {
       true
     >;
     staff_member_l_name: Schema.Attribute.String;
-    staff_member_title: Schema.Attribute.String;
+    staff_member_role: Schema.Attribute.String;
     team: Schema.Attribute.Relation<'oneToOne', 'api::team-detail.team-detail'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
