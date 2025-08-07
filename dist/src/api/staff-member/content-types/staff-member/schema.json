@@ -20,7 +20,7 @@
         "staff_member_email": {
             "type": "email"
         },
-        "staff_member_title": {
+        "staff_member_role": {
             "type": "string"
         },
         "staff_member_image": {
