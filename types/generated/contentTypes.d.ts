@@ -1923,6 +1923,7 @@ export interface PluginUsersPermissionsUser
     user_image: Schema.Attribute.Media<'images' | 'files'>;
     USER_IS_STAFF: Schema.Attribute.Boolean;
     user_last_name: Schema.Attribute.String;
+    user_notification_token: Schema.Attribute.String;
     user_partner_inviter: Schema.Attribute.Relation<
       'oneToOne',
       'api::sponsor.sponsor'
