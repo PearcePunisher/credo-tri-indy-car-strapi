@@ -141,6 +141,9 @@
         },
         "USER_IS_STAFF": {
             "type": "boolean"
+        },
+        "user_notification_token": {
+            "type": "string"
         }
     }
 }
