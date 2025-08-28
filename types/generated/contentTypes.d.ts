@@ -1057,6 +1057,39 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiNotificationDetailNotificationDetail
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'notification_details';
+  info: {
+    displayName: 'Notification Detail';
+    pluralName: 'notification-details';
+    singularName: 'notification-detail';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::notification-detail.notification-detail'
+    > &
+      Schema.Attribute.Private;
+    notification_detail_activation_code: Schema.Attribute.String;
+    notification_detail_event_schedule_doc_id: Schema.Attribute.String &
+      Schema.Attribute.Required;
+    notification_detail_expo_notification_token: Schema.Attribute.String;
+    notification_detail_user_id: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiRestaurantRestaurant extends Struct.CollectionTypeSchema {
   collectionName: 'restaurants';
   info: {
@@ -1965,6 +1998,7 @@ declare module '@strapi/strapi' {
       'api::f-a-q.f-a-q': ApiFAQFAQ;
       'api::faq.faq': ApiFaqFaq;
       'api::global.global': ApiGlobalGlobal;
+      'api::notification-detail.notification-detail': ApiNotificationDetailNotificationDetail;
       'api::restaurant.restaurant': ApiRestaurantRestaurant;
       'api::sponsor.sponsor': ApiSponsorSponsor;
       'api::staff-member.staff-member': ApiStaffMemberStaffMember;

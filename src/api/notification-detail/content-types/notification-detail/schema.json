@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "notification_details",
+  "info": {
+    "singularName": "notification-detail",
+    "pluralName": "notification-details",
+    "displayName": "Notification Detail"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "notification_detail_activation_code": {
+      "type": "string"
+    },
+    "notification_detail_event_schedule_doc_id": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "notification_detail_expo_notification_token": {
+      "type": "string",
+      "unique": false
+    },
+    "notification_detail_user_id": {
+      "type": "string"
+    }
+  }
+}
